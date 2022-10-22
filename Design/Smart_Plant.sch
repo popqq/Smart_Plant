@@ -13811,8 +13811,18 @@ Source: &lt;a href="https://cdn-learn.adafruit.com/assets/assets/000/091/676/ori
 <text x="15.24" y="167.64" size="2.54" layer="95">Microcontroller</text>
 <text x="167.64" y="73.66" size="2.54" layer="95">Reset &amp; Flash switches</text>
 <wire x1="152.4" y1="96.52" x2="5.08" y2="96.52" width="0.254" layer="95" style="longdash"/>
-<text x="162.56" y="22.86" size="1.778" layer="94" align="top-left">Notes:
-- Battery: LiR2032 </text>
+<text x="7.62" y="43.18" size="1.778" layer="94" align="top-left">R4 [k] - IBAT [mA]
+------------------------
+10 - 130
+5 - 250
+4 - 300
+3 - 400
+2 - 580
+1.66 - 690
+1.5 - 780
+1.33 - 900
+1.2 - 1000
+</text>
 <wire x1="93.98" y1="175.26" x2="93.98" y2="96.52" width="0.254" layer="95" style="longdash"/>
 <wire x1="152.4" y1="78.74" x2="213.36" y2="78.74" width="0.254" layer="95" style="longdash"/>
 <wire x1="213.36" y1="78.74" x2="256.54" y2="78.74" width="0.254" layer="95" style="longdash"/>
@@ -13988,12 +13998,12 @@ Source: &lt;a href="https://cdn-learn.adafruit.com/assets/assets/000/091/676/ori
 <attribute name="NAME" x="113.284" y="135.255" size="1.778" layer="95" rot="MR0"/>
 <attribute name="VALUE" x="113.284" y="130.429" size="1.778" layer="96" rot="MR0"/>
 </instance>
-<instance part="J1" gate="G$1" x="33.02" y="43.18" smashed="yes" rot="MR180">
-<attribute name="VALUE" x="30.48" y="48.006" size="1.778" layer="96" font="vector" rot="MR180"/>
-<attribute name="NAME" x="30.48" y="37.592" size="1.778" layer="95" font="vector" rot="MR180"/>
+<instance part="J1" gate="G$1" x="38.1" y="43.18" smashed="yes" rot="MR180">
+<attribute name="VALUE" x="35.56" y="48.006" size="1.778" layer="96" font="vector" rot="MR180"/>
+<attribute name="NAME" x="35.56" y="37.592" size="1.778" layer="95" font="vector" rot="MR180"/>
 </instance>
-<instance part="GND9" gate="1" x="43.18" y="33.02" smashed="yes">
-<attribute name="VALUE" x="40.64" y="30.48" size="1.778" layer="96"/>
+<instance part="GND9" gate="1" x="48.26" y="30.48" smashed="yes">
+<attribute name="VALUE" x="45.72" y="27.94" size="1.778" layer="96"/>
 </instance>
 <instance part="IC1" gate="G$1" x="68.58" y="81.28" smashed="yes">
 <attribute name="NAME" x="73.66" y="71.12" size="1.778" layer="95" rot="R90"/>
@@ -14384,8 +14394,8 @@ Source: &lt;a href="https://cdn-learn.adafruit.com/assets/assets/000/091/676/ori
 </segment>
 <segment>
 <pinref part="J1" gate="G$1" pin="2"/>
-<wire x1="40.64" y1="40.64" x2="43.18" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="43.18" y1="40.64" x2="43.18" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="45.72" y1="40.64" x2="48.26" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="48.26" y1="40.64" x2="48.26" y2="33.02" width="0.1524" layer="91"/>
 <pinref part="GND9" gate="1" pin="GND"/>
 </segment>
 <segment>
@@ -14644,7 +14654,7 @@ Source: &lt;a href="https://cdn-learn.adafruit.com/assets/assets/000/091/676/ori
 <pinref part="C1" gate="G$1" pin="1"/>
 <wire x1="60.96" y1="43.18" x2="53.34" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="53.34" y1="43.18" x2="53.34" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="53.34" y1="43.18" x2="40.64" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="43.18" x2="45.72" y2="43.18" width="0.1524" layer="91"/>
 <junction x="53.34" y="43.18"/>
 <pinref part="J1" gate="G$1" pin="1"/>
 <label x="60.96" y="48.26" size="1.27" layer="95" rot="R180" xref="yes"/>
