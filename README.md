@@ -1,4 +1,5 @@
 
+[![Documentation Status][documentation-shield]][documentation]
 [![GitHub Release][releases-shield]][releases]
 [![License][license-shield]](LICENSE)
 
@@ -21,6 +22,9 @@ The Smart Plant is a board that can be plugged directly on the soil, close to th
 <li><a href="./README.md">README.md</a></li>
 
 
+
+[documentation-shield]: https://readthedocs.org/projects/smart-plant/badge/?version=latest&style=for-the-badge
+[documentation]: https://smart-plant.readthedocs.io/en/latest/
 
 [releases-shield]: https://img.shields.io/github/release/JGAguado/Smart_Plant.svg?style=for-the-badge
 [releases]: https://github.com/JGAguado/Smart_Plant/releases
