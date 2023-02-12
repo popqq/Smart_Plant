@@ -10,7 +10,7 @@ author = 'J.G.Aguado'
 email = 'jon-garcia@hotmail.com'
 
 release = '1'
-version = '1'
+version = 'V1'
 
 today = date.today()
 compile_date = today.strftime("%B %d, %Y")
