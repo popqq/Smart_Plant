@@ -11,10 +11,6 @@ These safety guidelines, the operation instructions and the limit values listed 
 :term:`LiPo` battery powered
 ----------------------
 
-.. figure:: images/safety/lipo.png
-    :align: right
-    :figwidth: 200px
-
 Due to the high power density of :term:`LiPo` batteries, the |Product| is powered directly by a 1000mAh :term:`LiPo` battery. Therefore there are specific electronics embeded in charge of the battery 
 management, including charge/discharge of the battery and protections against low-voltage levels and short-circuits. 
 

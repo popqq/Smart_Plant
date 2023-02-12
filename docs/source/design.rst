@@ -20,10 +20,12 @@ Electronic schematics
 
     <iframe src="_static/ibom.html" height="800px" width="100%"></iframe>
 
-Enclosure drawings
-------------------
 
-.. image:: ../../Enclosure/LK-PLC01.png
+.. _enclosure:
+3D printable enclosure
+-----------------------
+
+.. image:: images/getting_started/Enclosure.png
     :width: 100%
-
+    
 :download:`Download PDF <../../Enclosure/LK-PLC01.pdf>`
