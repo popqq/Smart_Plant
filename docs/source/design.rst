@@ -30,13 +30,12 @@ Electronic schematics
 
 Version with solar panel
 ^^^^^^^^^^^^^^^^^^^^^^^^^
- - :download:`Bottom <../../Enclosure/01_Bottom.stl>`
- - :download:`Top <../../Enclosure/01_Top.stl>`
- - :download:`Button <../../Enclosure/01_Button.stl>`
- - :download:`Panel <../../Enclosure/01_Panel.stl>`
- - 
+ - :download:`Bottom <../../Enclosure/Smart-Plant Enclosure Bottom.stl>`
+ - :download:`Top <../../Enclosure/Smart-Plant Enclosure Top.stl>`
+ - :download:`Button <../../Enclosure/Smart-Plant Enclosure ButtonPin.stl>`
+ - :download:`Panel <../../Enclosure/Smart Plant Enclosure Solar.stl>`
 Version without solar panel
 ^^^^^^^^^^^^^^^^^^^^^^^^^
- - :download:`Bottom <../../Enclosure/02_Bottom.stl>`
- - :download:`Top <../../Enclosure/02_Top.stl>`
- - :download:`Button <../../Enclosure/02_Button.stl>`
+ - :download:`Bottom <../../Enclosure/Smart-Plant Enclosure Bottom.stl>`
+ - :download:`Top <../../Enclosure/Smart-Plant Enclosure Top without solar.stl>`
+ - :download:`Button <../../Enclosure/Smart-Plant Enclosure ButtonPin.stl>`
