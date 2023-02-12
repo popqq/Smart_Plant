@@ -41,9 +41,9 @@ Solar panel
 In addition to the USB-C, and with the aim of extening the service time between (USB) charges of the battery, the |Product| accepts the voltage input (parallel to the USB) from a solar panel.
 
 
-Sensors:
+Sensors
 --------
-.. figure:: ../../Documentation/Images/SP_Top.png
+.. image:: ../../Documentation/Images/SP_Top.png
     :align: right
     :figwidth: 200px
     
@@ -68,7 +68,7 @@ Light sensor
 ^^^^^^^^^^^^^^^^^^^^^^^
 .. figure:: images/getting_started/Illuminance.png
     :align: right
-    :figwidth: 200px
+    :figwidth: 300px
     
 On the |Product| there is a light sensor consisting on an Everlight's ALS-PT19-315C/L177/TR8, a photodiode sensitive on the range of 
 :math:`\lambda = 390...700nm` with the attached response curve.
@@ -80,6 +80,9 @@ The illuminance is measured through the ADC on **GPIO33**
 
 Ambient temperature & humidity 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. figure:: images/getting_started/aht20.png
+    :align: left
+    :figwidth: 100px
 The |Product| embeds an AHT20 temperature and humidity sensor ready to deliver calibrated data through the :term:`IIC` (:math:`I^2C`) bus:
 
 :SDA: **GPIO21**
@@ -92,6 +95,10 @@ the ADC on **GPIO35**
 
 E-paper
 --------
+.. figure:: images/getting_started/epaper.png
+    :align: right
+    :figwidth: 200px
+    
 The e-ink display pinout with respect to the ESP32 GPIOs goes as follows:
 
 .. list-table:: Pinout table

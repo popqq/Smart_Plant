@@ -70,3 +70,4 @@ please contact me directly:
    
    design   
    specs
+   glossary
