@@ -15,8 +15,7 @@ If you selected just the assembled board, you will need to get on your own some 
   Please note that **other displays may not work at all**.
 - A :term:`LiPo` battery, with a recommended 1000mAh capacity, for space and power. The ideal dimensions shouldn't excess the 50x34x5mm in order to fit in the designed enclosure.
 - An enclosure where to fit the |Product| upper part that you can find on the :ref:`enclosure` section.
-- Optionally, you can mount a solar panel that charges the battery under the right sunny conditions. The output voltage of the panel musn't excess the 6V and the recommended size to fit in the designed enclosure
- is 80x45mm
+- Optionally, you can mount a solar panel that charges the battery under the right sunny conditions. The output voltage of the panel musn't excess the 6V and the recommended size to fit in the designed enclosure is 80x45mm
 
 Powering
 --------
@@ -33,10 +32,6 @@ USB-C
 The USB Type-C is a very extended port for portable electronics, and because of it's standarized 5V power supply is ideal for charging the |Product|. Since the battery management IC is designed 
 to charge a 1000mAh, there is no need for powerfull USB chargers: any USB-charger capable to deliver 1A will be enough.
 
-.. figure:: images/assembly/usb.png
-    :align: center
-    :figwidth: 200px
-
 
 Solar panel
 ^^^^^^^^^^^^^
@@ -45,13 +40,14 @@ In addition to the USB-C, and with the aim of extening the service time between 
 
 Sensors
 --------
-.. image:: ../../Documentation/Images/SP_Top.png
+.. figure:: ../../Documentation/Images/SP_Top.png
     :align: right
     :figwidth: 200px
     
 As the |Product| is intended to work during long periods of time without having to be recharged, it is important to avoid undesired consumptions 
-durint the deep-sleep periods. This implies that the sensors have to be powered **only** when they are needed. Therefore there is a high-switch 
-circuit that enables/disables the powering of the *sensors power line* connected to the microcontroller's output **GPIO16**.
+durint the deep-sleep periods. This implies that the sensors have to be powered **only** when they are needed. 
+
+Therefore there is a high-switch circuit that enables/disables the powering of the *sensors power line* connected to the microcontroller's output **GPIO16**.
 
 
 Soil moisture
@@ -97,11 +93,12 @@ the ADC on **GPIO35**
 
 E-paper
 --------
-.. figure:: images/getting_started/epaper.png
-    :align: right
-    :figwidth: 200px
+
     
 The e-ink display pinout with respect to the ESP32 GPIOs goes as follows:
+.. figure:: images/getting_started/epaper.png
+    :align: right
+    :figwidth: 150px
 
 .. list-table:: Pinout table
     :widths: 10 10 
