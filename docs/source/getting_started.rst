@@ -9,11 +9,13 @@ with the components assembled.
 If you acquired the fully assemble kit, you can skip this section. 
 
 If you selected just the assembled board, you will need to get on your own some other parts to assemble a fully operational |Product|:
- - A 2.9" e-paper display. The recommend (and tested working) e-ink panel is the `296x128, 2.9inch E-Ink raw display panel <https://www.waveshare.com/product/2.9inch-e-paper.htm>`_ that you can order directly on the manufacturer. Please note that **other 
- displays may not work at all**.
- - A :term:`LiPo` battery, with a recommended 1000mAh capacity, for space and power. The ideal dimensions shouldn't excess the 50x34x5mm in order to fit in the designed enclosure.
- - An enclosure where to fit the |Product| upper part that you can find on the :ref:`enclosure` section.
- - Optionally, you can mount a solar panel that charges the battery under the right sunny conditions. The output voltage of the panel musn't excess the 6V and the recommended size to fit in the designed enclosure
+
+- A 2.9" e-paper display. The recommend (and tested working) e-ink panel is the `296x128, 2.9inch E-Ink raw display panel <https://www.waveshare.com/product/2.9inch-e-paper.htm>`_ that you can order directly on the manufacturer. 
+  
+  Please note that **other displays may not work at all**.
+- A :term:`LiPo` battery, with a recommended 1000mAh capacity, for space and power. The ideal dimensions shouldn't excess the 50x34x5mm in order to fit in the designed enclosure.
+- An enclosure where to fit the |Product| upper part that you can find on the :ref:`enclosure` section.
+- Optionally, you can mount a solar panel that charges the battery under the right sunny conditions. The output voltage of the panel musn't excess the 6V and the recommended size to fit in the designed enclosure
  is 80x45mm
 
 Powering

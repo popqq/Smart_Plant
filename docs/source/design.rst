@@ -27,5 +27,16 @@ Electronic schematics
 
 .. image:: images/getting_started/Enclosure.png
     :width: 100%
-    
-:download:`Download PDF <../../Enclosure/LK-PLC01.pdf>`
+
+Version with solar panel
+^^^^^^^^^^^^^^^^^^^^^^^^^
+ - :download:`Bottom <../../Enclosure/01_Bottom.stl>`
+ - :download:`Top <../../Enclosure/01_Top.stl>`
+ - :download:`Button <../../Enclosure/01_Button.stl>`
+ - :download:`Panel <../../Enclosure/01_Panel.stl>`
+ - 
+Version without solar panel
+^^^^^^^^^^^^^^^^^^^^^^^^^
+ - :download:`Bottom <../../Enclosure/02_Bottom.stl>`
+ - :download:`Top <../../Enclosure/02_Top.stl>`
+ - :download:`Button <../../Enclosure/02_Button.stl>`
