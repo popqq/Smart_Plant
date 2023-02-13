@@ -14,11 +14,6 @@ Electrical
       - Min.
       - Max.
       - Unit
-    * - Supply voltage (AC)
-      - :math:`V_{AC}`
-      - 100
-      - 240
-      - *V*
     * - Supply voltage (DC)
       - :math:`V_{DC}`
       - 9 

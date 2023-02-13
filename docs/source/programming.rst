@@ -5,12 +5,16 @@ There are two main programming methods supported and tested with the |Product|:
  * ESPHome
  * Arduino
 
-In both scenarios, and if you are using the USB port or the Serial port for programming it, you
-will first need to enter the board into flashing mode. For that, press and hold the *Flash* pushbutton
+In both scenarios, you will first need to enter the board into flashing mode. For that, press and hold the *Flash* pushbutton
 while you reset the board (pressing once the *Reset* pushbutton).
 
+.. Important::
+    For flashing new firmwares, if the :term:`OTA` support is not available, you will need an external UST-to-TTL module (like 
+    `this <https://www.amazon.com/HiLetgo-CP2102-Converter-Adapter-Downloader/dp/B00LODGRV8>`_) connected to the Serial port (3.3, GND, Tx, Rx).
+
 .. Caution::
-    When flashing the board, make sure its only powered by the USB/Serial port.
+    When flashing the board, make sure its only powered from one power source: through the Serial port (by removing the battery connector) or 
+    through the battery (but then do not connect the 3.3V pin on the Serial port).
     
 ESPHome
 ---------
@@ -41,12 +45,51 @@ to get it ready to work in your network:
 Now, your ESPHome device is ready to be found by Home Assistant in your network. Add it from the ESPHome section to add 
 and edit a customized configuration file.
 
-As an example of such configuration file (and the one flashed on the factory settings of the |Product|) 
-with all the :term:`I/O`:
+As an example of such configuration setup (and the one flashed on the factory settings of the |Product|) 
+with all the dependencies:
 
-.. literalinclude:: files/configuration.yaml
-   :language: yaml
+| esphome
+| ├── fonts
+| │   ├── Audiowide.ttf
+| │   └── materialdesignicons-webfont_5.9.55.ttf
+| ├── libraries
+| │   └── icon-map.h
+| ├── Lemon_tree_label_page_1.png
+| └── smart-plant.yaml
+| 
+| 
+
+In the folder structure above:
+
+- ``Audiowide.ttf`` is just a fonts style, you can download any of your choice and paste it there
+- ``materialdesignicons-webfont_5.9.55.ttf`` is a file containing a set of :term:`MDI` that you can download from `here <https://pictogrammers.com/library/mdi/>`_
+- ``icon-map.h`` is a mapping file that is used to associate a variable name with the *icon ID* from the previous file. It contains the following code:
+  
+  .. code-block:: C
    :linenos:
+    #include <map>
+    std::map<int, std::string> battery_icon_map
+    {
+        {0, "\U000F10CD"},
+        {1, "\U000F007A"},
+        {2, "\U000F007B"},
+        {3, "\U000F007C"},
+        {4, "\U000F007D"},
+        {5, "\U000F007E"},
+        {6, "\U000F007F"},
+        {7, "\U000F0080"},
+        {8, "\U000F0081"},
+        {9, "\U000F0082"},
+        {10, "\U000F0079"},
+    };
+
+- ``Lemon_tree_label_page_1.png`` is the background image that will be displayed on the e-paper. It has a resolution of 296x128 pixels.
+  .. image:: images/programming/Lemon_tree_label_page_1.png
+    :width: 80%
+- ``smart-plant.yaml`` is the YAML configuration file 
+  .. literalinclude:: files/configuration.yaml
+    :language: yaml
+    :linenos:
 
 
 Arduino

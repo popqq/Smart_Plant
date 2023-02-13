@@ -3,10 +3,10 @@ Getting started
 
 Assembly 
 ----------
-Due to the high ammount of components integrated in such small PCB layout, most of them are too small to be soldered at home by you. Therefore, these boards come already 
+Due to the high amount of components integrated in such small PCB layout, most of them are too small to be soldered at home by you. Therefore, these boards come already 
 with the components assembled. 
 
-If you acquired the fully assemble kit, you can skip this section. 
+If you acquired the fully assemble kit, you can skip this section.
 
 If you selected just the assembled board, you will need to get on your own some other parts to assemble a fully operational |Product|:
 

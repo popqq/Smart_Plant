@@ -39,6 +39,9 @@
    NTC
        Negative Temperature Coefficient
 
+   MDI
+       Material Design Icons
+
    BOM
        Bill of Materials
 
