@@ -65,8 +65,9 @@ In the folder structure above:
 - ``materialdesignicons-webfont_5.9.55.ttf`` is a file containing a set of :term:`MDI` that you can download from `here <https://pictogrammers.com/library/mdi/>`_
 - ``icon-map.h`` is a mapping file that is used to associate a variable name with the *icon ID* from the previous file. It contains the following code:
   
-  .. code-block:: C
+.. code-block:: C
    :linenos:
+
     #include <map>
     std::map<int, std::string> battery_icon_map
     {
@@ -83,11 +84,15 @@ In the folder structure above:
         {10, "\U000F0079"},
     };
 
+
 - ``Lemon_tree_label_page_1.png`` is the background image that will be displayed on the e-paper. It has a resolution of 296x128 pixels.
-  .. image:: images/programming/Lemon_tree_label_page_1.png
-    :width: 80%
-- ``smart-plant.yaml`` is the YAML configuration file 
-  .. literalinclude:: files/configuration.yaml
+.. image:: images/programming/Lemon_tree_label_page_1.png
+    :width: 75%
+
+
+- ``smart-plant.yaml`` is the YAML configuration file:
+
+.. literalinclude:: files/configuration.yaml
     :language: yaml
     :linenos:
 
