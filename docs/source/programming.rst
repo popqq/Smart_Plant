@@ -87,7 +87,7 @@ In the folder structure above:
 
 - ``Lemon_tree_label_page_1.png`` is the background image that will be displayed on the e-paper. It has a resolution of 296x128 pixels.
 .. image:: images/programming/Lemon_tree_label_page_1.png
-    :width: 75%
+    :width: 50%
 
 
 - ``smart-plant.yaml`` is the YAML configuration file:

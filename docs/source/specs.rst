@@ -14,19 +14,17 @@ Electrical
       - Min.
       - Max.
       - Unit
-    * - Supply voltage (DC)
+    * - Supply voltage (USB/Solar panel)
       - :math:`V_{DC}`
-      - 9 
-      - 24
-      - *V*
-    * - Power
-      - *P*
       -  
-      - 40
-      - *W*
+      - 5
+      - *V*
 
 Environment
 -----------
+.. Caution::
+    If the |Product| is placed on the soil close to the plant, be careful at the moment of wattering your plant: avoid splashes 
+    or flooding the pot.
 
 .. list-table:: 
     :widths: 50 20 20 20 20 20
