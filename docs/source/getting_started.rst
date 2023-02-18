@@ -19,23 +19,32 @@ If you selected just the assembled board, you will need to get on your own some 
 
 Powering
 --------
-The |Product| is be powered through a :term:`LiPo` battery plugged into the white JST connector. The voltage of the battery is reduced to the working 3.3V through a low-consumpiton LDO.
+The |Product| is be powered through a :term:`LiPo` battery plugged into the white JST connector. The voltage of the battery is regulated to the working 3.3V through a low-consumption LDO.
 
 .. Caution::
     Connect the battery after clamping the e-paper connector
 
 In order to charge the battery, there is a battery management IC that provides the right charging curve to the :term:`LiPo` battery and offers a visual indicator (red LED for charging, 
-green LED for standby) while the battery is being charged. There are two ways of charging the |Product|: USB-C and solar panel.
+green LED for standby) while the battery is being charged. There are two ways of charging the |Product|: USB-C or solar panel.
+
+
+.. image:: images/getting_started/Power_consumption.png
+    :width: 75%
 
 USB-C
 ^^^^^^^^^^^^^
 The USB Type-C is a very extended port for portable electronics, and because of it's standarized 5V power supply is ideal for charging the |Product|. Since the battery management IC is designed 
-to charge a 1000mAh, there is no need for powerfull USB chargers: any USB-charger capable to deliver 1A will be enough.
+to charge a 1000mAh.
 
 
 Solar panel
 ^^^^^^^^^^^^^
-In addition to the USB-C, and with the aim of extening the service time between (USB) charges of the battery, the |Product| accepts the voltage input (parallel to the USB) from a solar panel.
+.. figure:: images/getting_started/Solar_soldering.png
+    :align: left
+    :figwidth: 200px
+    
+In addition to the USB-C, and with the aim of extening the service time between (USB) charges of the battery, the |Product| can be configured to be powered from a solar panel. This version is not the default one, and 
+would imply soldering the solar pannel to the board as indicated in the figure.
 
 
 Sensors
@@ -88,12 +97,10 @@ The |Product| embeds an AHT20 temperature and humidity sensor ready to deliver c
 
 Battery level
 ^^^^^^^^^^^^^^^^
-The battery is monitored through a very simple circuit that allows the microcontroller directly read the battery's voltage through 
-the ADC on **GPIO35**
+This version (V1R1) is not capable to measure the voltage of the battery, and therefore the battery level.
 
 E-paper
 --------
-
     
 The e-ink display pinout with respect to the ESP32 GPIOs goes as follows:
 .. figure:: images/getting_started/epaper.png
