@@ -25,17 +25,21 @@ Electronic schematics
 3D printable enclosure
 -----------------------
 
+Starndard version
+^^^^^^^^^^^^^^^^^^^^^^^^^
 .. image:: images/getting_started/Enclosure.png
     :width: 100%
 
+ - :download:`Bottom <../../Enclosure/Smart-Plant Enclosure Bottom.stl>`
+ - :download:`Top <../../Enclosure/Smart-Plant Enclosure Top without solar.stl>`
+ - :download:`Button <../../Enclosure/Smart-Plant Enclosure ButtonPin.stl>`
+
+
 Version with solar panel
 ^^^^^^^^^^^^^^^^^^^^^^^^^
+.. image:: images/getting_started/Enclosure_solar.png
+    :width: 100%
  - :download:`Bottom <../../Enclosure/Smart-Plant Enclosure Bottom.stl>`
  - :download:`Top <../../Enclosure/Smart-Plant Enclosure Top.stl>`
  - :download:`Button <../../Enclosure/Smart-Plant Enclosure ButtonPin.stl>`
  - :download:`Panel <../../Enclosure/Smart Plant Enclosure Solar.stl>`
-Version without solar panel
-^^^^^^^^^^^^^^^^^^^^^^^^^
- - :download:`Bottom <../../Enclosure/Smart-Plant Enclosure Bottom.stl>`
- - :download:`Top <../../Enclosure/Smart-Plant Enclosure Top without solar.stl>`
- - :download:`Button <../../Enclosure/Smart-Plant Enclosure ButtonPin.stl>`
