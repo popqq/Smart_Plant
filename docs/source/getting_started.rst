@@ -6,7 +6,7 @@ Assembly
 Due to the high amount of components integrated in such small PCB layout, most of them are too small to be soldered at home by you. Therefore, these boards come already 
 with the components assembled. 
 
-If you acquired the fully assemble kit, you can skip this section.
+If you acquired the fully assembled kit, you can skip this section.
 
 If you selected just the assembled board, you will need to get on your own some other parts to assemble a fully operational |Product|:
 
@@ -31,11 +31,6 @@ green LED for standby) while the battery is being charged. There are two ways of
 .. image:: images/getting_started/Power_consumption.png
     :width: 75%
 
-USB-C
-^^^^^^^^^^^^^
-The USB Type-C is a very extended port for portable electronics, and because of it's standarized 5V power supply is ideal for charging the |Product|. Since the battery management IC is designed 
-to charge a 1000mAh.
-
 
 Solar panel
 ^^^^^^^^^^^^^
@@ -45,6 +40,11 @@ Solar panel
     
 In addition to the USB-C, and with the aim of extening the service time between (USB) charges of the battery, the |Product| can be configured to be powered from a solar panel. This version is not the default one, and 
 would imply soldering the solar pannel to the board as indicated in the figure.
+
+USB-C
+^^^^^^^^^^^^^
+The USB Type-C is a very extended port for portable electronics, and because of it's standarized 5V power supply is ideal for charging the |Product|. Since the battery management IC is designed 
+to charge a 1000mAh.
 
 
 Sensors
