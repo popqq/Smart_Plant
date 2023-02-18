@@ -19,7 +19,15 @@ Electrical
       -  
       - 5
       - *V*
-
+    * - Power consumption
+      - 
+      - 0.5 
+      - 800
+      - :math:`mA`
+      - 
+.. image:: images/getting_started/Power_consumption.png
+    :width: 100%
+    
 Environment
 -----------
 .. Caution::
