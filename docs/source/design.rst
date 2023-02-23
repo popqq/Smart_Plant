@@ -24,10 +24,10 @@ Electronic schematics
 .. _enclosure:
 3D printable enclosure
 -----------------------
-.. image:: \images\getting_started\Enclosure.png
+.. image:: images/getting_started/Enclosure.png
     :width: 49%
 
-.. image:: \images\getting_started\Enclosure_solar.png
+.. image:: images/getting_started/Enclosure_solar.png
     :width: 49%
 
 Standard version
