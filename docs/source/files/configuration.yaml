@@ -1,5 +1,18 @@
+substitutions:
+  device_name: "smart-plant"
+  friendly_name: "Smart Plant"
+  project_name: "smart-plant"
+  project_version: "1.1"
+  ap_ssid: "Smart-Plant"
+  ap_pwd: "smartplant"
+
 esphome:
-  name: smart-plant
+  name: "${device_name}"
+  name_add_mac_suffix: true
+  project:
+    name: "${project_name}"
+    version: "${project_version}"
+
   # Initialize the IIC bus immediatelly after the powering the sensors
   on_boot:
     priority: 600
@@ -26,19 +39,21 @@ logger:
 # Enable Home Assistant API
 api:
 
+# Enable Over The Air updates
 ota:
-  password: ***********
+
+#Public location of this yaml file
+dashboard_import:
+  package_import_url: github://JGAguado/Smart_Plant/blob/main/docs/source/files/configuration.yaml
+  import_full_config: false
+
+# Enable fallback hotspot (captive portal) in case wifi connection fails
+captive_portal:
 
 wifi:
-  ssid: !secret wifi_ssid
-  password: !secret wifi_password
-
-  # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
-    ssid: "Smart-Plant"
-    password: "smartplant"
-
-captive_portal:
+    ssid: "${ap_ssid}"
+    password: "${ap_pwd}"
 
 
 i2c:
@@ -83,11 +98,11 @@ sensor:
   # Temperature and humidity sensor
   - platform: aht10
     temperature:
-      name: "Temperature"
+      name: "${friendly_name} Temperature"
       id: temp
       icon: "mdi:thermometer"
     humidity:
-      name: "Air Humidity"
+      name: "${friendly_name} Air Humidity"
       id: hum
       icon: "mdi:water-percent"
     update_interval: 1s
@@ -96,7 +111,7 @@ sensor:
   - platform: adc
     pin: GPIO33
     id: illum
-    name: "Light"
+    name: "${friendly_name} Light"
     icon: "mdi:white-balance-sunny"
     attenuation: 11db
     unit_of_measurement: lux
@@ -108,7 +123,7 @@ sensor:
   # Capacitive soil moisture sensor
   - platform: adc
     pin: GPIO32
-    name: "Soil Moisture"
+    name: "${friendly_name} Soil Moisture"
     id : soil
     icon: "mdi:cup-water"
     update_interval: 1s
