@@ -25,10 +25,8 @@ Electronic schematics
 3D printable enclosure
 -----------------------
 .. image:: images/getting_started/Enclosure.png
-    :width: 49%
+    :width: 100%
 
-.. image:: images/getting_started/Enclosure_solar.png
-    :width: 49%
 
 Standard version
 ^^^^^^^^^^^^^^^^^
