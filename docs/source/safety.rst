@@ -30,7 +30,7 @@ Protection against :term:`ESD`
 
 .. figure:: images/safety/esd.png
     :align: left
-    :figwidth: 100px
+    :figwidth: 80px
 
 The |Product| contains components sensitive to :term:`ESD`, which can be damaged by inappropriate handling. 
 It's therefore necessary to provide some safety precautions against :term:`ESD` during the handling and operation.

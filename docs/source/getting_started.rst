@@ -6,12 +6,9 @@ Assembly
 Due to the high amount of components integrated in such small PCB layout, most of them are too small to be soldered at home by you. Therefore, these boards come already 
 with the components assembled. 
 
-If you acquired the fully assembled kit, you can skip this section.
-
-If you selected just the assembled board, you will need to get on your own some other parts to assemble a fully operational |Product|:
+The |Product|, in addition to the PCB assembled board, consist on the following parts:
 
 - A 2.9" e-paper display. The recommend (and tested working) e-ink panel is the `296x128, 2.9inch E-Ink raw display panel <https://www.waveshare.com/product/2.9inch-e-paper.htm>`_ that you can order directly on the manufacturer. 
-  
   Please note that **other displays may not work at all**.
 - A :term:`LiPo` battery, with a recommended 1000mAh capacity, for space and power. The ideal dimensions shouldn't excess the 50x34x5mm in order to fit in the designed enclosure.
 - An enclosure where to fit the |Product| upper part that you can find on the :ref:`enclosure` section.
@@ -22,7 +19,7 @@ Powering
 The |Product| is be powered through a :term:`LiPo` battery plugged into the white JST connector. The voltage of the battery is regulated to the working 3.3V through a low-consumption LDO.
 
 .. Caution::
-    Connect the battery after clamping the e-paper connector
+    Connect the battery after clamping the e-paper connector and be careful when plugging it or removing it, since the connector can collide with some SMD components.
 
 In order to charge the battery, there is a battery management IC that provides the right charging curve to the :term:`LiPo` battery and offers a visual indicator (red LED for charging, 
 green LED for standby) while the battery is being charged. There are two ways of charging the |Product|: USB-C or solar panel.
@@ -35,10 +32,10 @@ green LED for standby) while the battery is being charged. There are two ways of
 Solar panel
 ^^^^^^^^^^^^^
 .. figure:: images/getting_started/Solar_soldering.png
-    :align: left
+    :align: right
     :figwidth: 200px
     
-In addition to the USB-C, and with the aim of extening the service time between (USB) charges of the battery, the |Product| can be configured to be powered from a solar panel. This version is not the default one, and 
+In addition to the USB-C, and with the aim of extending the service time between (USB) charges of the battery, the |Product| can be configured to be powered from a solar panel. This version is not the default one, and 
 would imply soldering the solar pannel to the board as indicated in the figure.
 
 USB-C
@@ -73,14 +70,8 @@ The moisture level, in a 0-3.3V range, is measured through the ADC on **GPIO32**
 
 Light sensor
 ^^^^^^^^^^^^^^^^^^^^^^^
-.. figure:: images/getting_started/Illuminance.png
-    :align: right
-    :figwidth: 300px
-    
-On the |Product| there is a light sensor consisting on an Everlight's ALS-PT19-315C/L177/TR8, a photodiode sensitive on the range of 
-:math:`\lambda = 390...700nm` with the attached response curve.
-
-The illuminance is measured through the ADC on **GPIO33**
+The illuminance is measured through the ADC on **GPIO33**, and while it's still under test which illuminance transducer to use, the internal circuit
+can accept :term:`LDR` or photodiodes.
 
 .. Hint::
     If you are designing your own enclosure, make sure there is a hole for the light sensor on the case.
@@ -103,6 +94,7 @@ E-paper
 --------
     
 The e-ink display pinout with respect to the ESP32 GPIOs goes as follows:
+
 .. figure:: images/getting_started/epaper.png
     :align: right
     :figwidth: 150px

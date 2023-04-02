@@ -9,7 +9,7 @@ project = 'Smart Plant'
 author = 'J.G.Aguado'
 email = 'jon-garcia@hotmail.com'
 
-release = '1'
+release = '2'
 version = 'V1'
 
 today = date.today()
@@ -23,7 +23,7 @@ rst_epilog  = """
 .. |Email| replace:: %s
 .. |Release| replace:: %s
 .. |Date| replace:: %s
-""" % (project + ' ' + version, author, email, release, compile_date)
+""" % (project, author, email, release, compile_date)
 
 
 # -- General configuration

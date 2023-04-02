@@ -9,7 +9,7 @@ In both scenarios, you will first need to enter the board into flashing mode. Fo
 while you reset the board (pressing once the *Reset* pushbutton).
 
 .. Important::
-    For flashing new firmwares, if the :term:`OTA` support is not available, you will need an external UST-to-TTL module (like 
+    For flashing new firmwares, if the :term:`OTA` support is not available, you will need an external USB-to-TTL module (like 
     `this <https://www.amazon.com/HiLetgo-CP2102-Converter-Adapter-Downloader/dp/B00LODGRV8>`_) connected to the Serial port (3.3, GND, Tx, Rx).
 
 .. Caution::
