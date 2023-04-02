@@ -40,7 +40,7 @@ would imply soldering the solar pannel to the board as indicated in the figure.
 
 USB-C
 ^^^^^^^^^^^^^
-The USB Type-C is a very extended port for portable electronics, and because of it's standarized 5V power supply is ideal for charging the |Product|. Since the battery management IC is designed 
+The USB Type-C is a very extended port for portable electronics, and because of it's standarized 5V power supply is ideal for charging the |Product| since the battery management IC is designed 
 to charge a 1000mAh.
 
 
