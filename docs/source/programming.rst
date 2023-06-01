@@ -69,8 +69,7 @@ with all the dependencies:
 
 In the folder structure above:
 
-- ``Audiowide.ttf`` is just a fonts style, you can download any of your choice, as long as they are TTF files (I don’t know if ESPHome will integrate OTF soon), and paste it there. 
-    In this case, i used from the `Audiowide <https://fonts.google.com/specimen/Audiowide>`_ font. 
+- ``Audiowide.ttf`` is just a fonts style, you can download any of your choice, as long as they are TTF files (I don’t know if ESPHome will integrate OTF soon), and paste it there. In this case, i used from the `Audiowide <https://fonts.google.com/specimen/Audiowide>`_ font. 
 
 - ``materialdesignicons-webfont_5.9.55.ttf`` is a file containing a set of the icons fonts (the battery voltage level). I used the :term:`MDI` from `google <https://github.com/google/material-design-icons/blob/master/font/MaterialIcons-Regular.ttf>`_. 
 
@@ -96,10 +95,10 @@ In the folder structure above:
     };
 
 
-- ``Lemon_tree_label_page_1.png`` is the background image that will be displayed on the e-paper.  
-For the having always a styled background image, I made a `python script <https://github.com/JGAguado/Label-maker>`_ for generating 
-the image of the plant, the title and the parameters gauges out of a JSON config file for the plant. However you can use any photo 
-editor of your choice, but remember the max pixel size is 296x128 and the center of each gauges (as indicated in the YAML code).
+- ``Lemon_tree_label_page_1.png`` is the background image that will be displayed on the e-paper. 
+    For the having always a styled background image, I made a `python script <https://github.com/JGAguado/Label-maker>`_ for generating 
+    the image of the plant, the title and the parameters gauges out of a JSON config file for the plant. However you can use any photo 
+    editor of your choice, but remember the max pixel size is 296x128 and the center of each gauges (as indicated in the YAML code).
 
 .. image:: images/programming/Lemon_tree_label_page_1.png
     :width: 50%
