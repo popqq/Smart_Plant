@@ -16,6 +16,9 @@ while you reset the board (pressing once the *Reset* pushbutton).
     When flashing the board, make sure its only powered from one power source: through the Serial port (by removing the battery connector) or 
     through the battery (but then do not connect the 3.3V pin on the Serial port).
     
+
+
+.. _esphome:
 ESPHome
 ---------
 `ESPHome <https://esphome.io>`_ is a well known platform for programming ESP-based devices 
@@ -23,9 +26,13 @@ with a very little effort. It is configured via YAML files and supports a wide r
 and sensors.
 
 .. Important::
-    For using ESPHome, and all its funcionalities, you need to have a `Home Assistant <https://www.home-assistant.io>`_ instance running
+    For using ESPHome, and all its funcionalities, you need to have a `Home Assistant <https://www.home-assistant.io>`_ (HA) instance running
     in the same network as your |Product|.
 
+.. Tip::
+    A very easy way to upload and copy files (code or even images) into your ESPHome folder hosted in your HA instance is 
+    with the help of the Visual Studio Code integration for HA. This way you can just drag and drop the files over the folder 
+    on the Home Assistant’s Visual Studio Code navigation panel on your left.
 
 .. figure:: images/getting_started/captive_portal-ui.png
     :align: right
@@ -58,11 +65,13 @@ with all the dependencies:
 | └── smart-plant.yaml
 | 
 | 
+    
 
 In the folder structure above:
 
-- ``Audiowide.ttf`` is just a fonts style, you can download any of your choice and paste it there
-- ``materialdesignicons-webfont_5.9.55.ttf`` is a file containing a set of :term:`MDI` that you can download from `here <https://pictogrammers.com/library/mdi/>`_
+- ``Audiowide.ttf`` is just a fonts style, you can download any of your choice, as long as they are TTF files (I don’t know if ESPHome will integrate OTF soon), and paste it there. 
+I downloaded the Audiowide fonts family from google fonts: https://fonts.google.com/specimen/Audiowide .
+- ``materialdesignicons-webfont_5.9.55.ttf`` is a file containing a set of the icons fonts (the battery voltage level). I used the :term:`MDI` from `google <https://github.com/google/material-design-icons/blob/master/font/MaterialIcons-Regular.ttf>`_.
 - ``icon-map.h`` is a mapping file that is used to associate a variable name with the *icon ID* from the previous file. It contains the following code:
   
 .. code-block:: C
@@ -85,7 +94,11 @@ In the folder structure above:
     };
 
 
-- ``Lemon_tree_label_page_1.png`` is the background image that will be displayed on the e-paper. It has a resolution of 296x128 pixels.
+- ``Lemon_tree_label_page_1.png`` is the background image that will be displayed on the e-paper.  
+For the having always a styled background image, I made a `python script <https://github.com/JGAguado/Label-maker>`_ for generating 
+the image of the plant, the title and the parameters gauges out of a JSON config file for the plant. However you can use any photo 
+editor of your choice, but remember the max pixel size is 296x128 and the center of each gauges (as indicated in the YAML code).
+
 .. image:: images/programming/Lemon_tree_label_page_1.png
     :width: 50%
 
