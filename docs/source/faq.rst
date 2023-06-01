@@ -41,7 +41,7 @@ Can Smart Plant be used outdoor in garden? Is it weatherproof? And with the prin
 
 The brightness sensor seems to go into a kind of saturation already at low brightness. Is this a known and normal behaviour? 
     The standard sensor the SmartPlant includes is a 10k photoresistor (https://z3d9b7u8.stackpathcdn.com/pdf-down/G/L/5/GL5549_SENBA.pdf).
-    Howeever, it can be replaced with another LDR or a photodiode more suited to your light conditions. Just make sure you can unsolder the LDR 
+    However, it can be replaced with another LDR or a photodiode more suited to your light conditions. Just make sure you can unsolder the LDR 
     and solder your new sensor carefully without damaging the e-ink display.
 
 What is battery life on single charge?

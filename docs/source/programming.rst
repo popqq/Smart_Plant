@@ -69,46 +69,57 @@ with all the dependencies:
 
 In the folder structure above:
 
-- ``Audiowide.ttf`` is just a fonts style, you can download any of your choice, as long as they are TTF files (I don’t know if ESPHome will integrate OTF soon), and paste it there. In this case, i used from the `Audiowide <https://fonts.google.com/specimen/Audiowide>`_ font. 
+``Audiowide.ttf`` 
+    This is the fonts style of the displayed digits, you can download any of your choice, as long as they are TTF files 
+    (I don’t know if ESPHome will integrate OTF soon), and paste it there. 
+    
+    In this case, i used from the `Audiowide <https://fonts.google.com/specimen/Audiowide>`_ font. 
 
-- ``materialdesignicons-webfont_5.9.55.ttf`` is a file containing a set of the icons fonts (the battery voltage level). I used the :term:`MDI` from `google <https://github.com/google/material-design-icons/blob/master/font/MaterialIcons-Regular.ttf>`_. 
+``materialdesignicons-webfont_5.9.55.ttf`` 
+    As with the previous file, this is a file containing a set of the icons fonts (the battery voltage level). 
+    
+    In this case I used :term:`MDI` from `google <https://github.com/google/material-design-icons/blob/master/font/MaterialIcons-Regular.ttf>`_
+    (version 5.9.55), but shouldn't be any problem to look for the latest. 
 
-- ``icon-map.h`` is a mapping file that is used to associate a variable name with the *icon ID* from the previous file. It contains the following code:
+``icon-map.h`` 
+    This *mapping* file is used to associate a variable name with the *icon ID* from the previous file. It contains the following code:
   
-.. code-block:: C
-   :linenos:
-
-    #include <map>
-    std::map<int, std::string> battery_icon_map
-    {
-        {0, "\U000F10CD"},
-        {1, "\U000F007A"},
-        {2, "\U000F007B"},
-        {3, "\U000F007C"},
-        {4, "\U000F007D"},
-        {5, "\U000F007E"},
-        {6, "\U000F007F"},
-        {7, "\U000F0080"},
-        {8, "\U000F0081"},
-        {9, "\U000F0082"},
-        {10, "\U000F0079"},
-    };
-
-
-- ``Lemon_tree_label_page_1.png`` is the background image that will be displayed on the e-paper. For having always a styled background image, 
-I made a `python script <https://github.com/JGAguado/Label-maker>`_ that generates the image of the plant, the title and the parameter 
-gauges out of a JSON config file. Alternativelly, you can use any photo editor of your choice, but keep in mind the display size (296x128 
-pixel) and the center of each gauges (indicated in the YAML code).
-
-.. image:: images/programming/Lemon_tree_label_page_1.png
-    :width: 50%
-
-
-- ``smart-plant.yaml`` is the YAML configuration file:
-
-.. literalinclude:: files/configuration.yaml
-    :language: yaml
+    .. code-block:: C
     :linenos:
+
+        #include <map>
+        std::map<int, std::string> battery_icon_map
+        {
+            {0, "\U000F10CD"},
+            {1, "\U000F007A"},
+            {2, "\U000F007B"},
+            {3, "\U000F007C"},
+            {4, "\U000F007D"},
+            {5, "\U000F007E"},
+            {6, "\U000F007F"},
+            {7, "\U000F0080"},
+            {8, "\U000F0081"},
+            {9, "\U000F0082"},
+            {10, "\U000F0079"},
+        };  
+
+
+``Lemon_tree_label_page_1.png``
+    This is the background image that will be displayed on the e-paper. For having always a styled background image, I made a 
+    `python script <https://github.com/JGAguado/Label-maker>`_ that generates the image of the plant, the title and the parameter 
+    gauges out of a JSON config file. Alternativelly, you can use any photo editor of your choice, but keep in mind the display size 
+    (296x128 pixel) and the center of each gauges (indicated in the YAML code).
+
+    .. image:: images/programming/Lemon_tree_label_page_1.png
+        :width: 50%
+
+
+``smart-plant.yaml``
+    This is the YAML configuration file, the most important file that configures your ESPHome-based SmartPlant:
+
+    .. literalinclude:: files/configuration.yaml
+        :language: yaml
+        :linenos:
 
 
 Arduino
