@@ -85,8 +85,7 @@ In the folder structure above:
     This *mapping* file is used to associate a variable name with the *icon ID* from the previous file. It contains the following code:
   
     .. code-block:: C
-    :linenos:
-
+        :linenos:
         #include <map>
         std::map<int, std::string> battery_icon_map
         {
