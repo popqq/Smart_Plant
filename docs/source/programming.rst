@@ -95,10 +95,10 @@ In the folder structure above:
     };
 
 
-- ``Lemon_tree_label_page_1.png`` is the background image that will be displayed on the e-paper. 
-    For the having always a styled background image, I made a `python script <https://github.com/JGAguado/Label-maker>`_ for generating 
-    the image of the plant, the title and the parameters gauges out of a JSON config file for the plant. However you can use any photo 
-    editor of your choice, but remember the max pixel size is 296x128 and the center of each gauges (as indicated in the YAML code).
+- ``Lemon_tree_label_page_1.png`` is the background image that will be displayed on the e-paper. For having always a styled background image, 
+I made a `python script <https://github.com/JGAguado/Label-maker>`_ for generating the image of the plant, the title and the parameters 
+gauges out of a JSON config file for the plant. However you can use any photo editor of your choice, but remember the max pixel 
+size is 296x128 and the center of each gauges (as indicated in the YAML code).
 
 .. image:: images/programming/Lemon_tree_label_page_1.png
     :width: 50%
