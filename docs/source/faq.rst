@@ -16,3 +16,40 @@ When I try to compile the given YAML and upload it into the board I get some err
     
     Therefore you need to upload into the folder with the configuration YAML file the required files. I strongly suggest to use Visual studio code and just drag and 
     drop the items according to the structure mentioned on the :ref:`esphome` programming section.
+
+How is the time handled in the board? 
+    The time is handled by the ESP32 internal RTC to keep the design compact and straightforward. Therefore the deep-sleep timing is not very 
+    precise, I have observed a loss of around 1-2 minutes out of every hour, resulting in a deep sleep period that lasts around 58 minutes 
+    instead of 60. However, for the kind of application this is not a quite big issue. 
+
+Can I use it if there is no internet connection? 
+    Yes, and based on tests I made, actually will improve the battery duration in almost one week. You just need to adjust the config YAML file 
+    and remove the Wifi components.
+
+Can Smart Plant be used outdoor in garden? Is it weatherproof? And with the printed enclosure? 
+    I strongly recommend you to avoid placing them outdoor in garden, directly under a water hose/ sprinkles zone
+    or heavy rain. Instead use them on indoor plant pots (or a covered balcony). 
+    Despite I designed a 3d printable enclosure that would prevent most of the dirt particles and certain level of moisture from enter in 
+    the electronics area, I cannot warranty fully waterproofness.
+
+    However, one of my first backers embedded his board in resin (being careful to leave the reset pushbutton and the USB-C port accessible). 
+    He lost access to changing the LiPo, but in addition to a pretty cool design, he gained UV and water resistance.
+    
+    Regarding sun exposure, the e-paper display degrades under direct UV light exposure. For this, there are some UV blocking films, 
+    but at the moment are not mounted on the e-paper displays I sell with the Smart Plant. However they can be acquired on Amazon and 
+    placed over the display.
+
+The brightness sensor seems to go into a kind of saturation already at low brightness. Is this a known and normal behaviour? 
+    The standard sensor the SmartPlant includes is a 10k photoresistor (https://z3d9b7u8.stackpathcdn.com/pdf-down/G/L/5/GL5549_SENBA.pdf).
+    Howeever, it can be replaced with another LDR or a photodiode more suited to your light conditions. Just make sure you can unsolder the LDR 
+    and solder your new sensor carefully without damaging the e-ink display.
+
+What is battery life on single charge?
+    With the ESPHome configuration YAML, (10s working and e-paper update, and 1h on deep sleep mode) the expected battery life is around 40-50 days. 
+    If you use it without the WiFi settings even more.
+
+Can I attach a solar panel to extend the battery?
+    Yes, there are two unsoldered pins marked as +/- where you can attach a 5V solar pannel of your choice. Just make sure the size is fitting 
+    the rear cover's size so you can make two holes for passing the wires and glue it carefully to the surface.
+    When placing the SmartPlant in the pot, just make sure the sun exposed area is the solar panel and not the e-ink display.
+
