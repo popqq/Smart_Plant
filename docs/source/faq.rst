@@ -1,8 +1,10 @@
 :term:`FAQ`
 =============================
 
-After connecting everything and turning on the |Product|, I don't see the e-paper refresh or any LED on.
-    This probably means that your |Product| run out of battery. Charge the battery, you will see the red LED on that will turn green when finishes. 
+After connecting the battery, I don't see the e-paper refresh or any LED on.
+    The two LEDs that are on the board (STDBY & CHRG) only indicate the state of the battery while charging (USB-C or solar panel). The way to 
+    check if the SmartPlant is alive is pressing the Reset pushbutton and see that the e-paper refreshes correctly. If not, you will need to 
+    charge the battery through the USB-C. 
 
 Can I upload ESPHome directly from the Home Assistance setup running on my Raspberry Pi?
     Yes you can, and actually this is one of the simplest and more effective way to upload ESPHome.
