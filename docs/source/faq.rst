@@ -10,8 +10,7 @@ Can I upload ESPHome directly from the Home Assistance setup running on my Raspb
 Can I upload firmware through the USB-C?
     No, at the moment the USB-C can only be used for charging the battery.
 
-When I try to compile the given YAML and upload it into the board I get some error messages saying that I miss some files (Audiowide.ttf, icon-map.h, etc).
-How to fix it?
+When I try to compile the given YAML and upload it into the board I get some error messages saying that I miss some files (Audiowide.ttf, icon-map.h, etc). How to fix it?
     Just the configuration YAML file isn’t enough and you might get an error asking for missing items (the fonts and the images). The reason is because
     on the configuration we are asking for some files (the fonts that you want for the digits or the icons and the background image with the plant and the gauges).
     

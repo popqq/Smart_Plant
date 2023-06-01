@@ -70,8 +70,10 @@ with all the dependencies:
 In the folder structure above:
 
 - ``Audiowide.ttf`` is just a fonts style, you can download any of your choice, as long as they are TTF files (I don’t know if ESPHome will integrate OTF soon), and paste it there. 
-I downloaded the Audiowide fonts family from google fonts: https://fonts.google.com/specimen/Audiowide .
-- ``materialdesignicons-webfont_5.9.55.ttf`` is a file containing a set of the icons fonts (the battery voltage level). I used the :term:`MDI` from `google <https://github.com/google/material-design-icons/blob/master/font/MaterialIcons-Regular.ttf>`_.
+    In this case, i used from the `Audiowide <https://fonts.google.com/specimen/Audiowide>`_ font. 
+
+- ``materialdesignicons-webfont_5.9.55.ttf`` is a file containing a set of the icons fonts (the battery voltage level). I used the :term:`MDI` from `google <https://github.com/google/material-design-icons/blob/master/font/MaterialIcons-Regular.ttf>`_. 
+
 - ``icon-map.h`` is a mapping file that is used to associate a variable name with the *icon ID* from the previous file. It contains the following code:
   
 .. code-block:: C
