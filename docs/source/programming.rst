@@ -85,22 +85,22 @@ In the folder structure above:
     This *mapping* file is used to associate a variable name with the *icon ID* from the previous file. It contains the following code:
   
 .. code-block:: C
-   :linenos:
-    #include <map>
-    std::map<int, std::string> battery_icon_map
-    {
-        {0, "\U000F10CD"},
-        {1, "\U000F007A"},
-        {2, "\U000F007B"},
-        {3, "\U000F007C"},
-        {4, "\U000F007D"},
-        {5, "\U000F007E"},
-        {6, "\U000F007F"},
-        {7, "\U000F0080"},
-        {8, "\U000F0081"},
-        {9, "\U000F0082"},
-        {10, "\U000F0079"},
-    };
+    :linenos:
+     #include <map>
+     std::map<int, std::string> battery_icon_map
+     {
+         {0, "\U000F10CD"},
+         {1, "\U000F007A"},
+         {2, "\U000F007B"},
+         {3, "\U000F007C"},
+         {4, "\U000F007D"},
+         {5, "\U000F007E"},
+         {6, "\U000F007F"},
+         {7, "\U000F0080"},
+         {8, "\U000F0081"},
+         {9, "\U000F0082"},
+         {10, "\U000F0079"},
+     };
 
 
 ``Lemon_tree_label_page_1.png``
