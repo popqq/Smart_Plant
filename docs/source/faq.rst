@@ -6,6 +6,11 @@ After connecting the battery, I don't see the e-paper refresh or any LED on.
     check if the SmartPlant is alive is pressing the Reset pushbutton and see that the e-paper refreshes correctly. If not, you will need to 
     charge the battery through the USB-C. 
 
+After connecting the battery and the USB power I see the both LED (STDBY & CHRG) on.
+    Check the battery connection polarity: red with + and black/blue with -. 
+    Since there is no standard relative to the JST connectors polarity, please pay 
+    special attention when connecting any battery to the board. 
+
 Can I upload ESPHome directly from the Home Assistance setup running on my Raspberry Pi?
     Yes you can, and actually this is one of the simplest and more effective way to upload ESPHome.
 

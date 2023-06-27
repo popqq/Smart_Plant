@@ -22,12 +22,6 @@ esphome:
         Wire.begin();
         delay(100);
 
-external_components:
-  - source:
-      type: git
-      url: https://github.com/velaar/esphome
-      ref: dev
-    components: [ waveshare_epaper, display]
 
 esp32:
   board: esp32dev
