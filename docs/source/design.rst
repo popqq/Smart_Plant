@@ -30,6 +30,6 @@ Electronic schematics
 
 Standard version
 ^^^^^^^^^^^^^^^^^
- - :download:`Bottom <../../Enclosure/Smart-Plant Enclosure Bottom.stl>`
- - :download:`Top <../../Enclosure/Smart-Plant Enclosure Top without solar.stl>`
- - :download:`Button <../../Enclosure/Smart-Plant Enclosure ButtonPin.stl>`
+ - :download:`Bottom <../../Enclosure/Standard/Smart-Plant Enclosure Bottom.stl>`
+ - :download:`Top <../../Enclosure/Standard/Smart-Plant Enclosure Top.stl>`
+ - :download:`Button <../../Enclosure/Standard/Smart-Plant Enclosure ButtonPin.stl>`
