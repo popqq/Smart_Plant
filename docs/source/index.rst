@@ -1,9 +1,9 @@
 Smart Plant
 ###############
 
-.. sidebar:: |Product|
-
-    .. image:: ../../Documentation/Images/Smart_Plant.png
+.. raw:: html
+        
+    <iframe src="../_static/carousel.html" style="width: 100%; height: 300px; border: none;"></iframe>
 
 
 Welcome to the documentation page of the |Product|, a device to monitor the environmental conditions of your favourite plant.
@@ -43,7 +43,7 @@ please contact me directly:
 :Contact: |Email|
 
 :Board: |Product|
-:Revision: |Release|
+:Version: |Version|
 :Date: |Date|
 
 
