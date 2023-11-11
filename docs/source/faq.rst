@@ -15,7 +15,7 @@ Can I upload ESPHome directly from the Home Assistance setup running on my Raspb
     Yes you can, and actually this is one of the simplest and more effective way to upload ESPHome.
 
 Can I upload firmware through the USB-C?
-    No, at the moment the USB-C can only be used for charging the battery.
+    Yes, the ESP32-S2 includes a full-speed USB On-The-Go (OTG) interface to enable USB communication.
 
 When I try to compile the given YAML and upload it into the board I get some error messages saying that I miss some files (Audiowide.ttf, icon-map.h, etc). How to fix it?
     Just the configuration YAML file isn’t enough and you might get an error asking for missing items (the fonts and the images). The reason is because
@@ -46,10 +46,8 @@ Can Smart Plant be used outdoor in garden? Is it weatherproof? And with the prin
     but at the moment are not mounted on the e-paper displays I sell with the Smart Plant. However they can be acquired on Amazon and 
     placed over the display.
 
-The brightness sensor seems to go into a kind of saturation already at low brightness. Is this a known and normal behaviour? 
-    The standard sensor the SmartPlant includes is a 10k photoresistor (https://z3d9b7u8.stackpathcdn.com/pdf-down/G/L/5/GL5549_SENBA.pdf).
-    However, it can be replaced with another LDR or a photodiode more suited to your light conditions. Just make sure you can unsolder the LDR 
-    and solder your new sensor carefully without damaging the e-ink display.
+The illluminance sensor doesn't seem to present the right values. 
+    Since the VEML7700 gains can be adjusted via software to optimize the illluminance measurement, please have a look at the `Adafruit's tutorial <https://learn.adafruit.com/adafruit-veml7700/adjusting-for-different-light-levels>`_.
 
 What is battery life on single charge?
     With the ESPHome configuration YAML, (10s working and e-paper update, and 1h on deep sleep mode) the expected battery life is around 40-50 days. 

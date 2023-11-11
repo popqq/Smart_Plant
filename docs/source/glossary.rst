@@ -27,11 +27,14 @@
    FAQ
        Frequently Answered Questions
 
+   LED
+       Light Emitting Diode
+
    LDR
        Light Dependant Resistor
 
-   LED
-       Light Emitting Diode
+   LDO
+       Low-Dropout regulator 
 
    RGBW
        Red-Green-Blue-White

@@ -12,7 +12,7 @@ while you reset the board (pressing once the *Reset* pushbutton).
     For flashing new firmwares, if the :term:`OTA` support is not available, you can use the USB-C or the serial port (3.3, GND, Tx, Rx).
 
 .. Caution::
-    If you decide to flash the board through the serial port, make sure to unplug the battery before.
+    If you decide to flash the board through the serial port, make sure to unplug the battery before (the 3.3V supply is shared).
     
 
 

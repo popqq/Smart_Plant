@@ -8,7 +8,7 @@ with the components assembled.
 
 The |Product|, in addition to the PCB assembled board, consist on the following parts:
 
-- A 2.9" e-paper display. The recommend (and tested working) e-ink panel is the `296x128, 2.9inch E-Ink raw display panel <https://www.waveshare.com/product/2.9inch-e-paper.htm>`_ that you can order directly on the manufacturer. 
+- A 2.9" e-paper display. The recommended (and tested working) e-ink panel is the `296x128, 2.9inch E-Ink raw display panel <https://www.waveshare.com/product/2.9inch-e-paper.htm>`_ that you can order directly on the manufacturer. 
   Please note that **other displays may not work at all**.
 - A :term:`LiPo` battery, with a recommended 1000mAh capacity, for space and power. The ideal dimensions shouldn't excess the 50x34x5mm in order to fit in the designed enclosure.
 - An enclosure where to fit the |Product| upper part that you can find on the :ref:`enclosure` section.
@@ -16,10 +16,10 @@ The |Product|, in addition to the PCB assembled board, consist on the following 
 
 Powering
 --------
-The |Product| is be powered through a :term:`LiPo` battery plugged into the white JST connector. The voltage of the battery is regulated to the working 3.3V through a low-consumption LDO.
+The |Product| is be powered through a :term:`LiPo` battery plugged into the white JST connector. The voltage of the battery is regulated to the working 3.3V through a low-consumption :term:`LDO`.
 
 .. Caution::
-    Connect the battery after clamping the e-paper connector and be careful when plugging it or removing it, since the connector can collide with some SMD components.
+    Connect the battery after clamping the e-paper connector and be careful when plugging it or removing it, since the connector can be hard to plug/unplug.
 
 In order to charge the battery, there is a battery management IC that provides the right charging curve to the :term:`LiPo` battery and offers a visual indicator (red LED for charging, 
 green LED for standby) while the battery is being charged. There are two ways of charging the |Product|: USB-C or solar panel.
@@ -35,13 +35,12 @@ Solar panel
     :align: right
     :figwidth: 200px
     
-In addition to the USB-C, and with the aim of extending the service time between (USB) charges of the battery, the |Product| can be configured to be powered from a solar panel. This version is not the default one, and 
+In addition to the USB-C, and with the aim of extending the service time between (USB) charges of the battery, the |Product| can be configured to be powered from a solar panel. This feature 
 would imply soldering the solar pannel to the board as indicated in the figure.
 
 USB-C
 ^^^^^^^^^^^^^
-The USB Type-C is a very extended port for portable electronics, and because of it's standarized 5V power supply is ideal for charging the |Product| since the battery management IC is designed 
-to charge a 1000mAh.
+The USB Type-C is a very extended port for portable electronics, and because of it's standarized 5V power supply is ideal for charging the |Product|.
 
 
 Sensors
@@ -97,7 +96,7 @@ Ambient temperature & humidity
     :figwidth: 100px
 The |Product| embeds an AHT20 temperature and humidity sensor ready to deliver calibrated data through the :math:`I^2C` bus.
 
-This sensor has an operational relative humidity range of 0 to 100% ( with a +-3 % typical accuracy), and a temperature range of -40 to 85 °C (+-1 °C typical accuracy)
+This sensor has an operational relative humidity range of 0 to 100% ( with a ±3 % typical accuracy), and a temperature range of -40 to 85 °C (±1 °C typical accuracy)
 
 The :math:`I^2C` address is **0x38**.
 
@@ -107,7 +106,7 @@ For measuring the battery level, the |Product| integrates the MAX17048 :term:`IC
 
 This sensor measures the voltage of the LiPo cell and does the math to get an estimative percentage of the battery level.
 
-The :math:`I^2C` address is **0x38**.
+The :math:`I^2C` address is **0x36**.
 
 E-paper
 --------
