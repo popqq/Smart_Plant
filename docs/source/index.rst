@@ -3,7 +3,7 @@ Smart Plant
 
 .. raw:: html
         
-    <iframe src="../_static/carousel.html" style="width: 100%; height: 300px; border: none;"></iframe>
+    <iframe src="_static/carousel.html" style="width: 100%; height: 300px; border: none;"></iframe>
 
 
 Welcome to the documentation page of the |Product|, a device to monitor the environmental conditions of your favourite plant.
