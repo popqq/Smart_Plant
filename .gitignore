@@ -1,5 +1,8 @@
 /Production
-/Enclosure/*.CATProduct
-/Enclosure/*.CATPart
 /Private
 /Design/*.scr
+/Enclosure/Standard V2
+/Enclosure/Resin casting
+/Enclosure/Solar rear
+/Enclosure/Solar top
+/Enclosure/Standard
