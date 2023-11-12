@@ -55,6 +55,11 @@ durint the deep-sleep periods. This implies that the sensors have to be powered 
 
 Therefore there is a high-switch circuit that enables/disables the powering of the *sensors power line* connected to the microcontroller's output **GPIO16**.
 
+Regarding the sensors, and except for the soil moisture sensor which is analog, the rest (illuminance, temperature & humidity, battery status) are :term:`IIC` (:math:`I^2C`) sensors,
+which are physically defined with the following pinout:
+
+:SDA: **GPIO33**
+:SCL: **GPIO34**
 
 Soil moisture
 ^^^^^^^^^^^^^^
@@ -66,12 +71,18 @@ Since the |Product| can be directly inserted into the soil of your pot, the area
 probe that measures the soil capacity, determined by the soil moisture. As it has no metallic electrodes, there is no risk of probe degradation 
 with time. 
 
-The moisture level, in a 0-3.3V range, is measured through the ADC on **GPIO32**
+The moisture level, in a 0-3.3V range, is measured through the ADC on **GPIO1**
 
 Light sensor
 ^^^^^^^^^^^^^^^^^^^^^^^
-The illuminance is measured through the ADC on **GPIO33**, and while it's still under test which illuminance transducer to use, the internal circuit
-can accept :term:`LDR` or photodiodes.
+The illuminance is measured through a digital sensor VEML7700-TR. This sensor is located facing the outside of the top part of the board, so it 
+would be facing the sky. 
+
+The VEML7700 is quite a convenient sensor since it delivers the values directly in lux. 
+The sensor has 16-bit dynamic range for ambient light detection from 0 lux to about 120k lux with resolution down to 0.0036 lx/ct, 
+with software-adjustable gain and integration times.
+
+The :math:`I^2C` address is **0x10**.
 
 .. Hint::
     If you are designing your own enclosure, make sure there is a hole for the light sensor on the case.
@@ -81,14 +92,19 @@ Ambient temperature & humidity
 .. figure:: images/getting_started/aht20.png
     :align: left
     :figwidth: 100px
-The |Product| embeds an AHT20 temperature and humidity sensor ready to deliver calibrated data through the :term:`IIC` (:math:`I^2C`) bus:
+The |Product| embeds an AHT20 temperature and humidity sensor ready to deliver calibrated data through the :math:`I^2C` bus.
 
-:SDA: **GPIO21**
-:SCL: **GPIO22**
+This sensor has an operational relative humidity range of 0 to 100% ( with a +-3 % typical accuracy), and a temperature range of -40 to 85 °C (+-1 °C typical accuracy)
+
+The :math:`I^2C` address is **0x38**.
 
 Battery level
 ^^^^^^^^^^^^^^^^
-This version (V1R1) is not capable to measure the voltage of the battery, and therefore the battery level.
+For measuring the battery level, the |Product| integrates the MAX17048 :term:`IC`.
+
+This sensor measures the voltage of the LiPo cell and does the math to get an estimative percentage of the battery level.
+
+The :math:`I^2C` address is **0x38**.
 
 E-paper
 --------
@@ -105,17 +121,17 @@ The e-ink display pinout with respect to the ESP32 GPIOs goes as follows:
 
     * - ESP32
       - E-paper
-    * - 25
-      - BUSY
-    * - 26
-      - RST
-    * - 27
-      - DC
-    * - 13
-      - CLK
     * - 14
-      - MOSI
+      - BUSY
     * - 15
+      - RST
+    * - 13
+      - DC/MISO
+    * - 12
+      - CLK
+    * - 11
+      - MOSI
+    * - 10
       - CS
 
 Enclosure

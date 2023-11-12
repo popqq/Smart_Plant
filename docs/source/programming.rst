@@ -8,13 +8,11 @@ There are two main programming methods supported and tested with the |Product|:
 In both scenarios, you will first need to enter the board into flashing mode. For that, press and hold the *Flash* pushbutton
 while you reset the board (pressing once the *Reset* pushbutton).
 
-.. Important::
-    For flashing new firmwares, if the :term:`OTA` support is not available, you will need an external USB-to-TTL module (like 
-    `this <https://www.amazon.com/HiLetgo-CP2102-Converter-Adapter-Downloader/dp/B00LODGRV8>`_) connected to the Serial port (3.3, GND, Tx, Rx).
+.. Note::
+    For flashing new firmwares, if the :term:`OTA` support is not available, you can use the USB-C or the serial port (3.3, GND, Tx, Rx).
 
 .. Caution::
-    When flashing the board, make sure its only powered from one power source: through the Serial port (by removing the battery connector) or 
-    through the battery (but then do not connect the 3.3V pin on the Serial port).
+    If you decide to flash the board through the serial port, make sure to unplug the battery before.
     
 
 
@@ -57,10 +55,11 @@ with all the dependencies:
 
 | esphome
 | ├── fonts
-| │   ├── Audiowide.ttf
 | │   └── materialdesignicons-webfont_5.9.55.ttf
 | ├── libraries
 | │   └── icon-map.h
+| │   └── MAX17048.h
+| │   └── VEML7700.h
 | ├── Lemon_tree_label_page_1.png
 | └── smart-plant.yaml
 | 
@@ -68,12 +67,6 @@ with all the dependencies:
     
 
 In the folder structure above:
-
-``Audiowide.ttf`` 
-    This is the fonts style of the displayed digits, you can download any of your choice, as long as they are TTF files 
-    (I don’t know if ESPHome will integrate OTF soon), and paste it there. 
-    
-    In this case, i used from the `Audiowide <https://fonts.google.com/specimen/Audiowide>`_ font. 
 
 ``materialdesignicons-webfont_5.9.55.ttf`` 
     As with the previous file, this is a file containing a set of the icons fonts (the battery voltage level). 
@@ -113,6 +106,20 @@ In the folder structure above:
     .. image:: images/programming/Lemon_tree_label_page_1.png
         :width: 50%
 
+
+``MAX17048``
+    This is the library to read the MAX17048 sensor (battery level):
+
+    .. literalinclude:: files/MAX17048.h
+        :language: C
+        :linenos:
+
+``VEML7700``
+    This is the library to read the VEML7700 light sensor :
+
+    .. literalinclude:: files/VEML7700.h
+        :language: C
+        :linenos:
 
 ``smart-plant.yaml``
     This is the YAML configuration file, the most important file that configures your ESPHome-based SmartPlant:
