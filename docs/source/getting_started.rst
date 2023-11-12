@@ -53,7 +53,7 @@ Sensors
 As the |Product| is intended to work during long periods of time without having to be recharged, it is important to avoid undesired consumptions 
 durint the deep-sleep periods. This implies that the sensors have to be powered **only** when they are needed. 
 
-Therefore there is a high-switch circuit that enables/disables the powering of the *sensors power line* connected to the microcontroller's output **GPIO16**.
+Therefore there is a high-switch circuit that enables/disables the powering of the *sensors power line* connected to the microcontroller's output **GPIO4**.
 
 Regarding the sensors, and except for the soil moisture sensor which is analog, the rest (illuminance, temperature & humidity, battery status) are :term:`IIC` (:math:`I^2C`) sensors,
 which are physically defined with the following pinout:
@@ -72,6 +72,9 @@ probe that measures the soil capacity, determined by the soil moisture. As it ha
 with time. 
 
 The moisture level, in a 0-3.3V range, is measured through the ADC on **GPIO1**
+
+|
+|
 
 Light sensor
 ^^^^^^^^^^^^^^^^^^^^^^^
