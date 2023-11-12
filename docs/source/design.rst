@@ -24,12 +24,11 @@ Electronic schematics
 .. _enclosure:
 3D printable enclosure
 -----------------------
-.. image:: images/getting_started/Enclosure.png
+.. image:: ../../Enclosure/Render.png
     :width: 100%
 
 
 Standard version
 ^^^^^^^^^^^^^^^^^
- - :download:`Bottom <../../Enclosure/Standard/Smart-Plant Enclosure Bottom.stl>`
- - :download:`Top <../../Enclosure/Standard/Smart-Plant Enclosure Top.stl>`
- - :download:`Button <../../Enclosure/Standard/Smart-Plant Enclosure ButtonPin.stl>`
+ - :download:`Bottom <../../Enclosure/Smart-Plant Enclosure Bottom.stl>`
+ - :download:`Top <../../Enclosure/Smart-Plant Enclosure Top.stl>`

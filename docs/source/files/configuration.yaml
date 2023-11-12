@@ -2,7 +2,7 @@ substitutions:
   device_name: "smart-plant"
   friendly_name: "Smart Plant"
   project_name: "smart.plant"
-  project_version: "1.2"
+  project_version: "2.1"
   ap_ssid: "Smart-Plant"
   ap_pwd: "smartplant"
 
@@ -11,6 +11,14 @@ esphome:
   name_add_mac_suffix: true
   includes:
     - libraries/icon-map.h
+    - libraries/MAX17048.h
+    - libraries/VEML7700.h
+  libraries:
+    - "Wire"
+    - "Adafruit Unified Sensor"
+    - "SPI"
+    - "Adafruit BusIO"
+    - "Adafruit VEML7700 Library"
   project:
     name: "${project_name}"
     version: "${project_version}"
@@ -24,7 +32,7 @@ esphome:
 
 
 esp32:
-  board: esp32dev
+  board: esp32-s2-saola-1
   framework:
     type: arduino
 
@@ -45,9 +53,6 @@ dashboard_import:
 # Enable fallback hotspot (captive portal) in case wifi connection fails
 captive_portal:
 
-esp32_improv:
-  authorizer: none
-
 improv_serial:
 
 wifi:
@@ -57,28 +62,28 @@ wifi:
 
 
 i2c:
-  scl: GPIO22
-  sda: GPIO21
+  scl: GPIO34
+  sda: GPIO33
   scan: false
   id: bus_a
-  frequency: 100kHz
 
 spi:
-  clk_pin:  GPIO13
-  mosi_pin: GPIO14
+  clk_pin:  GPIO12
+  mosi_pin: GPIO11
+  miso_pin: GPIO13
     
 image:
   - file: "plant_labels/Lemon_tree_label_page_1.png"
     id: page_1_background
 
 font:
-  - file: "fonts/Audiowide.ttf"
+  - file: "gfonts://Audiowide"
     id: font_title
     size: 20
-  - file: "fonts/Audiowide.ttf"
+  - file: "gfonts://Audiowide"
     id: font_subtitle
     size: 15
-  - file: "fonts/Audiowide.ttf"
+  - file: "gfonts://Audiowide"
     id: font_parameters
     size: 15
   - file: 'fonts/materialdesignicons-webfont.ttf'
@@ -112,64 +117,63 @@ time:
 
 switch:
   - platform: gpio
-    pin: GPIO16
+    pin: GPIO4
     id: exc
     name: "Excitation switch"
     icon: "mdi:power"
     restore_mode: ALWAYS_ON  
     
     
-sensor:
+sensor:    
   # Battery level sensor  
-  - platform: adc
-    pin: GPIO35
-    id: VCC
-    internal: true
-    attenuation: 11db
-    update_interval: 1s
-    filters:
-      - multiply: 1.796
-    accuracy_decimals: 5
-    unit_of_measurement: V
-    
-  - platform: template
-    name: "Battery"
-    id: battery
-    unit_of_measurement: "%"
-    update_interval: 1s
+  - platform: custom
     lambda: |-
-      float battery_perc = 100.00 * (id(VCC).state) / (1.44);
-      return (battery_perc > 100.0) ? 100.0 : battery_perc ;
+      auto max17048_sensor = new MAX17048Sensor();
+      App.register_component(max17048_sensor);
+      return {max17048_sensor->voltage_sensor, max17048_sensor->percentage_sensor};
+    sensors:
+      - name: "Bat. voltage"
+        unit_of_measurement: V
+        accuracy_decimals: 2
+        id: batvoltage
+
+      - name: "Battery"
+        id: battery
+        icon: "mdi:battery"
+        unit_of_measurement: '%'
   # Temperature and humidity sensor
   - platform: aht10
+    variant: aht20
+    i2c_id: bus_a
     temperature:
-      name: "${friendly_name} Temperature"
+      name: "Temperature"
       id: temp
       icon: "mdi:thermometer"
     humidity:
-      name: "${friendly_name} Air Humidity"
+      name: "Air Humidity"
       id: hum
       icon: "mdi:water-percent"
-    update_interval: 1s
-    i2c_id: bus_a
+    update_interval: 3s
 
   # Light sensor
-  - platform: adc
-    pin: GPIO33
-    id: illum
-    name: "${friendly_name} Light"
-    icon: "mdi:white-balance-sunny"
-    attenuation: 11db
-    unit_of_measurement: lux
-    update_interval: 1s
-    filters:
-    - lambda: |-
-        return (x / 10000.0) * 2000000.0;
+  - platform: custom
+    lambda: |-
+      auto my_veml7700_sensor = new MyVEML7700Sensor();
+      App.register_component(my_veml7700_sensor);
+      return {
+        my_veml7700_sensor->veml7700_lux
+      };
+
+    sensors:
+      - name: "Light"
+        id: light
+        accuracy_decimals: 0
+        unit_of_measurement: lux
         
   # Capacitive soil moisture sensor
   - platform: adc
-    pin: GPIO32
-    name: "${friendly_name} Soil Moisture"
+    pin: GPIO1
+    name: "Soil Moisture"
     id : soil
     icon: "mdi:cup-water"
     update_interval: 1s
@@ -177,29 +181,27 @@ sensor:
     attenuation: 11db
     filters:
     - median:
-        window_size: 7
-        send_every: 3
+        window_size: 5
+        send_every: 5
 
     - calibrate_linear:
         - 1.25 -> 100.00
         - 2.8 -> 0.00
     - lambda: if (x < 1) return 0; else if (x > 100) return 100; return (x);
     accuracy_decimals: 0
-    on_value:
-      then:
-        - component.update: my_display      
 
 display:
   - platform: waveshare_epaper
-    dc_pin: GPIO27
-    cs_pin: GPIO15
-    busy_pin: GPIO25
-    reset_pin: GPIO26
+    cs_pin: GPIO10
+    dc_pin: GPIO13
+    busy_pin: GPIO14
+    reset_pin: GPIO15
     rotation: 270
     model: 2.90inv2
-    update_interval: never
     id: my_display
-    pages:
+    update_interval: never
+    full_update_every: 1
+    pages: 
       - id: page1
         lambda: |-
           #define H_LEFT_MARGIN 4
@@ -213,13 +215,13 @@ display:
           
           it.image(0, 0, id(page_1_background));
           
-          // Battery
+          // // Battery
           float battery_perc = id(battery).state;
           int battery_range = battery_perc / 10 ;
           battery_range = (battery_range > 10) ? 10 : battery_range;
           battery_range = (battery_range < 0)  ?  0 : battery_range;
           
-          it.printf(278, 1, id(font_icon_battery), TextAlign::TOP_LEFT, battery_icon_map[battery_range].c_str()
+          it.printf(278, 1, id(font_icon), TextAlign::TOP_LEFT, battery_icon_map[battery_range].c_str()
           );
           it.printf(278, 1, id(font_subtitle), TextAlign::TOP_RIGHT, 
           "%3.0f%%", battery_perc);
@@ -227,8 +229,9 @@ display:
           // Date
           it.strftime(278, 18, id(font_subtitle), TextAlign::TOP_RIGHT, 
           "%H:%M %d/%m", id(esptime).now());     
-          
-          
+          it.printf(278, 20, id(font_icon), TextAlign::TOP_LEFT, accessories_icon_map["Synchronize"].c_str()
+          );
+
           // Parameters
           // Drawing the marker over the gauge
           float pi = 3.141592653589793;
@@ -269,11 +272,11 @@ display:
           
           // *** Light ***
           min_range = 0; 
-          max_range = 10000;
+          max_range = 3775;
           xc = 134;
           yc = 70;
           
-          measured = id(illum).state;
+          measured = id(light).state;
           
           if (measured < min_range) {
             measured = min_range;
@@ -294,7 +297,7 @@ display:
           it.line(x2, y2, x0, y0);
           
           it.printf(xc + radius, yc + 1.7*radius, id(font_parameters), TextAlign::TOP_CENTER, 
-          "%.0flx", id(illum).state);  
+          "%.0flx", id(light).state);  
           
           
           // *** Temperature ***
@@ -354,7 +357,7 @@ display:
           it.line(x2, y2, x0, y0);
           
           it.printf(xc + radius, yc + 1.7*radius, id(font_parameters), TextAlign::TOP_CENTER, 
-          "%.0f%%", id(hum).state);     
+          "%.0f%%", id(hum).state);      
           
 # # Uncomment it if you want the SmartPlant to enter into deep sleep
 # deep_sleep:
