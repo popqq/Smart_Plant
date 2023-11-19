@@ -30,6 +30,14 @@ esphome:
         Wire.begin();
         delay(100);
 
+     - script.execute: consider_deep_sleep
+
+external_components:
+  # replace 1234 with the number of the Pull Request
+  - source: github://pr#5198
+    components:
+      # list all components modified by this Pull Request here
+      - aht10
 
 esp32:
   board: esp32-s2-saola-1
@@ -56,6 +64,9 @@ captive_portal:
 improv_serial:
 
 wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  
   ap:
     ssid: "${ap_ssid}"
     password: "${ap_pwd}"
@@ -87,7 +98,7 @@ font:
     id: font_parameters
     size: 15
   - file: 'fonts/materialdesignicons-webfont.ttf'
-    id: font_icon_battery
+    id: font_icon
     size: 20
     glyphs:
       - "\U000F007A" # battery-10
@@ -221,16 +232,14 @@ display:
           battery_range = (battery_range > 10) ? 10 : battery_range;
           battery_range = (battery_range < 0)  ?  0 : battery_range;
           
-          it.printf(278, 1, id(font_icon), TextAlign::TOP_LEFT, battery_icon_map[battery_range].c_str()
-          );
+          it.printf(278, 1, id(font_icon), TextAlign::TOP_LEFT, battery_icon_map[battery_range].c_str());
           it.printf(278, 1, id(font_subtitle), TextAlign::TOP_RIGHT, 
           "%3.0f%%", battery_perc);
           
           // Date
           it.strftime(278, 18, id(font_subtitle), TextAlign::TOP_RIGHT, 
           "%H:%M %d/%m", id(esptime).now());     
-          it.printf(278, 20, id(font_icon), TextAlign::TOP_LEFT, accessories_icon_map["Synchronize"].c_str()
-          );
+
 
           // Parameters
           // Drawing the marker over the gauge
@@ -359,7 +368,27 @@ display:
           it.printf(xc + radius, yc + 1.7*radius, id(font_parameters), TextAlign::TOP_CENTER, 
           "%.0f%%", id(hum).state);      
           
-# # Uncomment it if you want the SmartPlant to enter into deep sleep
-# deep_sleep:
-#   run_duration: 10s
-#   sleep_duration: 3600s
+deep_sleep:
+  id: deep_sleep_control
+  # run_duration: 5s
+  sleep_duration: 1h
+
+script:
+  - id: consider_deep_sleep
+    mode: queued
+    then:
+      - delay: 5s
+      - component.update: my_display   
+      - delay: 5s           
+      - if:
+          condition:
+            sensor.in_range:
+              id: batvoltage
+              above: 4.15
+          then:
+            - deep_sleep.prevent: deep_sleep_control 
+          else:
+            - deep_sleep.enter: deep_sleep_control 
+
+      - delay: 25s
+      - script.execute: consider_deep_sleep
