@@ -28,6 +28,9 @@ Contents
 :doc:`getting_started`
     First steps for configuring and working with the |Product|.
 
+:doc:`programming`
+    Example firmware files for the |Product|.
+
 :doc:`design`
     Design files of the |Product|.
 
@@ -48,26 +51,12 @@ please contact me directly:
 
 
 .. toctree::
-   :caption: Safety Guidelines
    :maxdepth: 2
    :hidden:
 
-   safety
-   
-.. toctree::
-   :caption: First steps
-   :maxdepth: 2
-   :hidden:
-
+   safety   
    getting_started
    programming
-   faq
-
-.. toctree::  
-   :caption: Design
-   :maxdepth: 2
-   :hidden:
-   
    design   
-   specs
    glossary
+   faq 

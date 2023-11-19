@@ -1,4 +1,4 @@
-:term:`FAQ`
+💬 :term:`FAQ`
 =============================
 
 After connecting the battery, I don't see the e-paper refresh or any LED on.
