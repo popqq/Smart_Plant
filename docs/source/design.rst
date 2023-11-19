@@ -35,8 +35,9 @@ Standard version
     :width: 49%
 
 |
- - :download:`Bottom <../../Enclosure/Smart-Plant Enclosure Bottom.stl>`
- - :download:`Top <../../Enclosure/Smart-Plant Enclosure Top.stl>`
+
+- :download:`Bottom <../../Enclosure/Smart-Plant Enclosure Bottom.stl>`
+- :download:`Top <../../Enclosure/Smart-Plant Enclosure Top.stl>`
 
 
 Technical Specifications
