@@ -66,4 +66,10 @@
 
    IIC
        Inter-Integrated Circuit
+
+   FDM
+       Fused deposition modeling
+
+   SLA
+       Stereolithography
     

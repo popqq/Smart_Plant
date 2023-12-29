@@ -26,19 +26,39 @@ Electronic schematics
 -----------------------
 
 
-Standard version
+FDM version
 ^^^^^^^^^^^^^^^^^
-.. image:: ../../Enclosure/Render.png
+This 3D model is intended to be printed on :term:`FDM` printers. Check your printing configuration for obtaining the best results on ~2mm thick walls.
+
+.. image:: ../../Enclosure/FDM/Render.png
     :width: 49%
     
-.. image:: ../../Enclosure/Render_1.png
+.. image:: ../../Enclosure/FDM/Render_1.png
     :width: 49%
 
 |
 
-- :download:`Bottom <../../Enclosure/Smart-Plant Enclosure Bottom.stl>`
-- :download:`Top <../../Enclosure/Smart-Plant Enclosure Top.stl>`
+- :download:`Bottom <../../Enclosure/FDM/Smart-Plant Enclosure Bottom.stl>`
+- :download:`Top <../../Enclosure/FDM/Smart-Plant Enclosure Top.stl>`
 
+
+
+SLA version
+^^^^^^^^^^^^^^^^^
+This 3D model is intended to be printed on :term:`SLA` printers. 
+If you want to use transparent resins, you can download the *Top transparent* version, without holes for the sensor or the display.
+
+.. image:: ../../Enclosure/SLA/Render.png
+    :width: 49%
+    
+.. image:: ../../Enclosure/SLA/Render_1.png
+    :width: 49%
+
+|
+
+- :download:`Bottom <../../Enclosure/SLA/Smart-Plant Enclosure Bottom.stl>`
+- :download:`Top <../../Enclosure/SLA/Smart-Plant Enclosure Top.stl>`
+- :download:`Top transparent <../../Enclosure/SLA/Smart-Plant Enclosure Top - Transparent.stl>`
 
 Technical Specifications
 -------------------------
