@@ -2,21 +2,17 @@
 ===============
 
 There are two main programming methods supported and tested with the |Product|: 
+
  * ESPHome
  * Arduino
 
-In both scenarios, you will first need to enter the board into flashing mode. For that, press and hold the *Flash* pushbutton
+In both scenarios, and if you are using the USB port or the Serial port for programming it, you
+will first need to enter the board into flashing mode: press and hold the *Flash* pushbutton
 while you reset the board (pressing once the *Reset* pushbutton).
 
-.. Note::
-    For flashing new firmwares, if the :term:`OTA` support is not available, you can use the USB-C or the serial port (3.3, GND, Tx, Rx).
-
 .. Caution::
-    If you decide to flash the board through the serial port, make sure to unplug the battery before (the 3.3V supply is shared).
+    When flashing the board, make sure its only powered by the USB/Serial port.
     
-
-
-.. _esphome:
 ESPHome
 ---------
 `ESPHome <https://esphome.io>`_ is a well known platform for programming ESP-based devices 
@@ -24,43 +20,37 @@ with a very little effort. It is configured via YAML files and supports a wide r
 and sensors.
 
 .. Important::
-    For using ESPHome, and all its funcionalities, you need to have a `Home Assistant <https://www.home-assistant.io>`_ (HA) instance running
+    For using ESPHome, and all its funcionalities, you need to have a `Home Assistant <https://www.home-assistant.io>`_ instance running
     in the same network as your |Product|.
+
+    
+The |Product| comes raw, without any firmware by default, therefore, you will need to flash it for first time. There are many ways to flash 
+your ESPHome device (`locally <https://esphome.io/guides/getting_started_command_line.html>`_, `ESPHome Web <https://web.esphome.io>`_), but 
+the one I strongly recommend is the one through the `ESPHome Add-on for Home Assistant <https://esphome.io/guides/getting_started_hassio.html>`_:
+
+
+1. Make sure your ESPHome Add-on for HA is up to date and working. 
+2. Add a new device, enter the name you want (like *Smart-Plant*), and skip the next step.
+3. Select the *ESP32-S2* as the device type, skip the last step (installation). You will have created a provisional first configuration YAML file.
+
+.. figure:: images/getting_started/esphome_1.png
+    :align: center
+    :figwidth: 400px
+
+4. Open the recently created file and replace the content with the example configuration. With all the dependencies, the working tree would look like:
 
 .. Tip::
     A very easy way to upload and copy files (code or even images) into your ESPHome folder hosted in your HA instance is 
     with the help of the Visual Studio Code integration for HA. This way you can just drag and drop the files over the folder 
     on the Home Assistant’s Visual Studio Code navigation panel on your left.
 
-.. figure:: images/getting_started/captive_portal-ui.png
-    :align: right
-    :figwidth: 300px
-    
-The |Product| already comes with an embeded version of ESPHome, that would only require an :term:`OTA` update
-to get it ready to work in your network:
-
-1. Power the board, and let it run for 1-2 minutes. When the board cannot connect to a WiFi network, it will 
-   create a fallback hotspot.
-2. Use a smartphone or tablet and go to the WiFi settings, connect to the recently created *Smart-Plant* hotspot with the password *smartplant*.
-3. Access to the captive portal and open the browser if doesn't pop up automatically.
-4. Enter your network setttings and press *Save*.
-
-
-
-Now, your ESPHome device is ready to be found by Home Assistant in your network. Add it from the ESPHome section to add 
-and edit a customized configuration file.
-
-As an example of such configuration setup (and the one flashed on the factory settings of the |Product|) 
-with all the dependencies:
-
 | esphome
-| ├── fonts
-| │   └── materialdesignicons-webfont_5.9.55.ttf
 | ├── libraries
 | │   └── icon-map.h
 | │   └── MAX17048.h
 | │   └── VEML7700.h
-| ├── Lemon_tree_label_page_1.png
+| ├── images
+| │   └── Lemon_tree_label_page_1.png
 | └── smart-plant.yaml
 | 
 | 
@@ -68,14 +58,9 @@ with all the dependencies:
 
 In the folder structure above:
 
-``materialdesignicons-webfont_5.9.55.ttf`` 
-    As with the previous file, this is a file containing a set of the icons fonts (the battery voltage level). 
-    
-    In this case I used :term:`MDI` from `google <https://github.com/google/material-design-icons/blob/master/font/MaterialIcons-Regular.ttf>`_
-    (version 5.9.55), but shouldn't be any problem to look for the latest. 
 
 ``icon-map.h`` 
-    This *mapping* file is used to associate a variable name with the *icon ID* from the previous file. It contains the following code:
+    This *mapping* file is used to associate a variable name with the *icon ID*, like with the battery status. It contains the following code:
   
 .. code-block:: C
    :linenos:
@@ -83,17 +68,13 @@ In the folder structure above:
    #include <map>
    std::map<int, std::string> battery_icon_map
    {
-    {0, "\U000F10CD"},
-    {1, "\U000F007A"},
-    {2, "\U000F007B"},
-    {3, "\U000F007C"},
-    {4, "\U000F007D"},
-    {5, "\U000F007E"},
-    {6, "\U000F007F"},
-    {7, "\U000F0080"},
-    {8, "\U000F0081"},
-    {9, "\U000F0082"},
-    {10, "\U000F0079"},
+    {0, "\U0000ebdc"},
+    {1, "\U0000ebd9"},
+    {2, "\U0000ebe0"},
+    {3, "\U0000ebdd"},
+    {4, "\U0000ebe2"},
+    {5, "\U0000ebd4"},
+    {6, "\U0000e1a4"},
    };
 
 
@@ -127,6 +108,23 @@ In the folder structure above:
     .. literalinclude:: files/configuration.yaml
         :language: yaml
         :linenos:
+
+.. Note:: You might need to keep the encription keys *OTA* and *API*
+
+.. literalinclude:: files/configuration.yaml
+   :language: yaml
+   :linenos:
+
+5. Click on install, make sure that the the board is connected via the USB-C (and that it is into flashing mode, see up in this guide) to the device running the Home Assistant (in my case a Raspberry Pi) before selecting the mode of installation.
+
+.. figure:: images/getting_started/esphome_2.png
+    :align: center
+    :figwidth: 400px
+
+6. Select the Serial port and let it run, it might take some minutes. 
+7. Once it's done, you will have to exit the flashing mode: press the *Reset* pushbutton once. 
+
+Now, your ESPHome-based |Product| should be ready to log data and stream it to your Home Assistant. Note that the current configuration is just an example and you can customize it at your will, including the calibration. 
 
 
 Arduino

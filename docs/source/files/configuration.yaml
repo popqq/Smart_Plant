@@ -81,7 +81,6 @@ i2c:
 spi:
   clk_pin:  GPIO12
   mosi_pin: GPIO11
-  miso_pin: GPIO13
     
 image:
   - file: "plant_labels/Lemon_tree_label_page_1.png"
@@ -97,30 +96,18 @@ font:
   - file: "gfonts://Audiowide"
     id: font_parameters
     size: 15
-  - file: 'fonts/materialdesignicons-webfont.ttf'
+  - file: 'gfonts://Material+Symbols+Outlined'
     id: font_icon
     size: 20
     glyphs:
-      - "\U000F007A" # battery-10
-      - "\U000F007B" # battery-20
-      - "\U000F007C" # battery-30
-      - "\U000F007D" # battery-40
-      - "\U000F007E" # battery-50
-      - "\U000F007F" # battery-60
-      - "\U000F0080" # battery-70
-      - "\U000F0081" # battery-80
-      - "\U000F0082" # battery-90
-      - "\U000F0079" # battery
-      - "\U000F0083" # battery-alert
-      - "\U000F10CC" # battery-alert-variant
-      - "\U000F10CD" # battery-alert-variant-outline
-      - "\U000F092D" # wifi-off
-      - "\U000F092E" # wifi-strength-0
-      - "\U000F091F" # wifi-strength-1
-      - "\U000F0922" # wifi-strength-2
-      - "\U000F0925" # wifi-strength-3
-      - "\U000F0928" # wifi-strength-4
-      - "\U000F04E6" # sync
+      - "\U0000ebdc" # battery empty
+      - "\U0000ebd9" # battery 1 bar
+      - "\U0000ebe0" # battery 2 bar
+      - "\U0000ebdd" # battery 3 bar
+      - "\U0000ebe2" # battery 4 bar
+      - "\U0000ebd4" # battery 5 bar
+      - "\U0000e1a4" # battery full
+      - "\U0000e627" # sync
 
 time:
   - platform: homeassistant
@@ -228,8 +215,8 @@ display:
           
           // // Battery
           float battery_perc = id(battery).state;
-          int battery_range = battery_perc / 10 ;
-          battery_range = (battery_range > 10) ? 10 : battery_range;
+          int battery_range = battery_perc / 16 ;
+          battery_range = (battery_range > 6) ? 6 : battery_range;
           battery_range = (battery_range < 0)  ?  0 : battery_range;
           
           it.printf(278, 1, id(font_icon), TextAlign::TOP_LEFT, battery_icon_map[battery_range].c_str());
@@ -239,6 +226,7 @@ display:
           // Date
           it.strftime(278, 18, id(font_subtitle), TextAlign::TOP_RIGHT, 
           "%H:%M %d/%m", id(esptime).now());     
+          it.printf(278, 18, id(font_icon), TextAlign::TOP_LEFT, "\U0000e627");  
 
 
           // Parameters

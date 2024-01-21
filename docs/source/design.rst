@@ -22,6 +22,7 @@ Electronic schematics
 
 
 .. _enclosure:
+
 3D printable enclosure
 -----------------------
 
