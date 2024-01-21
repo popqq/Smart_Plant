@@ -105,10 +105,6 @@ In the folder structure above:
 ``smart-plant.yaml``
     This is the YAML configuration file, the most important file that configures your ESPHome-based SmartPlant:
 
-    .. literalinclude:: files/configuration.yaml
-        :language: yaml
-        :linenos:
-
 .. Note:: You might need to keep the encription keys *OTA* and *API*
 
 .. literalinclude:: files/configuration.yaml

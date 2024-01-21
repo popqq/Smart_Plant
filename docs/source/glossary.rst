@@ -31,6 +31,9 @@
    FAQ
        Frequently Answered Questions
 
+   FPC
+       Flexible Printed Circuit
+
    LED
        Light Emitting Diode
 
