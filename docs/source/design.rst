@@ -39,10 +39,13 @@ This 3D model is intended to be printed on :term:`FDM` printers. Check your prin
 
 |
 
-- :download:`Bottom <../../Enclosure/FDM/Smart-Plant Enclosure Bottom.stl>`
-- :download:`Top <../../Enclosure/FDM/Smart-Plant Enclosure Top.stl>`
+Printable STL files:
+- :download:`Bottom STL<../../Enclosure/FDM/Smart-Plant Enclosure Bottom.stl>`
+- :download:`Top STL<../../Enclosure/FDM/Smart-Plant Enclosure Top.stl>`
 
-
+Editable STEP files:
+- :download:`Bottom STP<../../Enclosure/FDM/Smart-Plant Enclosure Bottom.stp>`
+- :download:`Top STP<../../Enclosure/FDM/Smart-Plant Enclosure Top.stp>`
 
 SLA version
 ^^^^^^^^^^^^^^^^^
@@ -57,9 +60,15 @@ If you want to use transparent resins, you can download the *Top transparent* ve
 
 |
 
-- :download:`Bottom <../../Enclosure/SLA/Smart-Plant Enclosure Bottom.stl>`
-- :download:`Top <../../Enclosure/SLA/Smart-Plant Enclosure Top.stl>`
-- :download:`Top transparent <../../Enclosure/SLA/Smart-Plant Enclosure Top - Transparent.stl>`
+Printable STL files:
+- :download:`Bottom STL<../../Enclosure/SLA/Smart-Plant Enclosure Bottom.stl>`
+- :download:`Top STL<../../Enclosure/SLA/Smart-Plant Enclosure Top.stl>`
+- :download:`Top transparent STL<../../Enclosure/SLA/Smart-Plant Enclosure Top - Transparent.stl>`
+
+Editable STEP files:
+- :download:`Bottom STP<../../Enclosure/SLA/Smart-Plant Enclosure Bottom.stp>`
+- :download:`Top STP<../../Enclosure/SLA/Smart-Plant Enclosure Top.stp>`
+- :download:`Top transparent STP<../../Enclosure/SLA/Smart-Plant Enclosure Top - Transparent.stp>`
 
 Technical Specifications
 -------------------------
