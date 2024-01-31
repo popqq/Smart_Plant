@@ -49,6 +49,10 @@ Editable STEP files:
 - :download:`Bottom STP<../../Enclosure/FDM/Smart-Plant Enclosure Bottom.stp>`
 - :download:`Top STP<../../Enclosure/FDM/Smart-Plant Enclosure Top.stp>`
 
+Community's creation:
+
+- `@Paulomart<https://github.com/Paulomart>` created a more streamlined button operation version for the bottom part. Available on `Printables<https://www.printables.com/de/model/745390-smart-plant-bottom-enclosure-with-improved-buttons>`.
+
 SLA version
 ^^^^^^^^^^^^^^^^^
 This 3D model is intended to be printed on :term:`SLA` printers. 
