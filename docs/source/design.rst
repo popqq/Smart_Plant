@@ -80,10 +80,12 @@ Community's versions
 ^^^^^^^^^^^^^^^^^^^^^^
 
 .. figure:: https://media.printables.com/media/prints/745390/images/5824027_fd714d4d-da38-4658-af41-c73c53df3433_d8d7018c-166e-40a0-8fd8-d4adc773e110/thumbs/inside/1920x1440/jpeg/img_7507.webp
-    :align: right
-    :figwidth: 200px
+    :align: left
+    :figwidth: 200px   
+
     
-    `@Paulomart <https://github.com/Paulomart>`_ created a more streamlined button operation version for the bottom part. Check it out on `Printables <https://www.printables.com/de/model/745390-smart-plant-bottom-enclosure-with-improved-buttons>`_.
+- `@Paulomart <https://github.com/Paulomart>`_ created a more streamlined button operation version for the bottom part. Check it out on `Printables <https://www.printables.com/de/model/745390-smart-plant-bottom-enclosure-with-improved-buttons>`_.
+
 
 
 
