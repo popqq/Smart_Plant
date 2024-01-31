@@ -51,7 +51,7 @@ Editable STEP files:
 
 Community's creation:
 
-- `@Paulomart<https://github.com/Paulomart>` created a more streamlined button operation version for the bottom part. Available on `Printables<https://www.printables.com/de/model/745390-smart-plant-bottom-enclosure-with-improved-buttons>`.
+- `@Paulomart <https://github.com/Paulomart>`_ created a more streamlined button operation version for the bottom part. Check it out on `Printables <https://www.printables.com/de/model/745390-smart-plant-bottom-enclosure-with-improved-buttons>`_.
 
 SLA version
 ^^^^^^^^^^^^^^^^^
