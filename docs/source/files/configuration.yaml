@@ -166,7 +166,7 @@ sensor:
       - name: "Light"
         id: light
         accuracy_decimals: 0
-        unit_of_measurement: lux
+        unit_of_measurement: lx
         
   # Capacitive soil moisture sensor
   - platform: adc
