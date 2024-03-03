@@ -122,6 +122,14 @@ In the folder structure above:
 
 Now, your ESPHome-based |Product| should be ready to log data and stream it to your Home Assistant. Note that the current configuration is just an example and you can customize it at your will, including the calibration. 
 
+Flash Tools
+^^^^^^^^^^^^
+If you want to deploy an ESPHome already compiled *.bin* image, you can use Espressif's official `Flash Download Tools <https://www.espressif.com/en/support/download/other-tools>`_ to upload it into your Smart Powermeter. 
+As an example (and test) you can use this :download:`smart-areca-v2r1-offline.bin <files/smart-areca-v2r1-offline.bin>` image with the address `0x0`, make sure `DoNotChgBin` is checked:
+
+.. image:: images/programming/Flash_tool.png
+    :width: 3100%
+
 
 Arduino
 --------
