@@ -1,11 +1,8 @@
 
 [![Documentation Status][documentation-shield]][documentation]
-[![GitHub Release][releases-shield]][releases]
 [![License][license-shield]](LICENSE)
-[![BuyIt][buyit-shield]][tindie]
-
 [![Project Maintenance][maintenance-shield]][maintenance]
-[![BuyMeCoffee][buymecoffee-shield]][buymecoffee]
+[![buyit][buyit-shield]][buyit]
 
 # Smart Plant
 The Smart Plant is a board that can be plugged directly on the soil, close to the plant, that allows the measurement of the environment (soil moisture, environment temperature & illuminance), and presents the information on an ePaper display.
@@ -27,16 +24,10 @@ The Smart Plant is a board that can be plugged directly on the soil, close to th
 [documentation-shield]: https://readthedocs.org/projects/smart-plant/badge/?version=v2r1&style=for-the-badge
 [documentation]: https://smart-plant.readthedocs.io/
 
-[releases-shield]: https://img.shields.io/github/release/JGAguado/Smart_Plant.svg?style=for-the-badge
-[releases]: https://github.com/JGAguado/Smart_Plant/releases
-
 [license-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg?style=for-the-badge
 
-[maintenance-shield]: https://img.shields.io/badge/maintainer-J.%20G.%20Aguado-blue.svg?style=for-the-badge
+[maintenance-shield]: https://img.shields.io/badge/maintainer-J.%20G.%20Aguado-2e48a7.svg?style=for-the-badge
 [maintenance]: https://github.com/JGAguado
 
-[buymecoffee-shield]: https://img.shields.io/badge/buy%20me%20a%20coffee-support-yellow.svg?style=for-the-badge
-[buymecoffee]: https://www.buymeacoffee.com/J.G.Aguado
-
-[buyit-shield]: https://img.shields.io/badge/get%20it%20on-tindie-247d84.svg?style=for-the-badge
-[tindie]: https://www.tindie.com/products/jgaguado/smart-plant/
+[buyit-shield]: https://img.shields.io/badge/get%20it%20on-elecrow-399BD7.svg?style=for-the-badge
+[buyit]: https://www.elecrow.com/smart-plant.html
