@@ -16,10 +16,14 @@ In order to assemble your |Product|:
 
 1. Open the clamp connector, by smoothly pulling up the tab.
 2. Introduce the e-paper :term:`FPC` with the exposed pads facing up (so that you could still see them)
+
+.. Note::
+  The ribbon cable for the e-ink display does not need to be forced in, or slide all the way in. It only goes in a few millimetres, and then the clamp holds it in place.
+
 3. Close the clamp connector
 
 .. Caution::
-  Once it's plugged into the |Product|, and without an enclosure, be careful about the e-paper, the connector is fragile and could get damaged if isn't handled with care.
+  Once it's plugged into the |Product|, and without an enclosure, be careful about the e-paper, the connector is fragile and could get damaged if isn't handled with care. It could be useful to use double.sided tape to stuck the screen onto the PCB, just to keep it from flapping loose, but keep in mind that removing it afterwards can damage the e-paper display.
 
 4. Bend carefully the e-paper's :term:`FPC` in a way that the panel rests over the reverse side of the :term:`PCB`.
 5. Connect the :term:`LiPo` battery, making sure that the polarity is well respected: red wire is + (positive terminal) and black wire is the - (negative terminal).

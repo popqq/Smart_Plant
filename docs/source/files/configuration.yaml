@@ -10,7 +10,6 @@ esphome:
   name: "${device_name}"
   name_add_mac_suffix: true
   includes:
-    - libraries/icon-map.h
     - libraries/MAX17048.h
     - libraries/VEML7700.h
   libraries:
@@ -83,7 +82,7 @@ spi:
   mosi_pin: GPIO11
     
 image:
-  - file: "plant_labels/Lemon_tree_label_page_1.png"
+  - file: "https://smart-plant.readthedocs.io/en/v2r1/_images/Lemon_tree_label_page_1.png"
     id: page_1_background
 
 font:
