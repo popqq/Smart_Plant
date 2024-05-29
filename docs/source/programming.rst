@@ -63,7 +63,7 @@ With these to files, you can proceed with the setting up:
 
 
 .. Important:: 
-    Note that with this example code, the Smart Plant enters into deep-sleep mode if the battery level is under 4.15V (lines 363-383), so be aware that if you want to flash it :term:`OTA`, make sure the battery is fully charged or the Smart Plant powered via USB-C.
+    Note that with this example code, the Smart Plant enters into deep-sleep mode if the battery level is under a 95% (lines 363-383), so be aware that if you want to flash it :term:`OTA`, make sure the battery is fully charged or the Smart Plant powered via USB-C.
 
     
 .. Note::
