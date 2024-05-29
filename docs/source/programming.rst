@@ -28,22 +28,6 @@ The |Product| comes raw, without any firmware by default, therefore, you will ne
 your ESPHome device (`locally <https://esphome.io/guides/getting_started_command_line.html>`_, `ESPHome Web <https://web.esphome.io>`_), but 
 the one I strongly recommend is the one through the `ESPHome Add-on for Home Assistant <https://esphome.io/guides/getting_started_hassio.html>`_:
 
-Before starting, please note that, since at the moment there are two external components not integrated natively on ESPHome (the light sensor ``VEML7700`` and the battery monitor ``MAX17048``), the working tree in ESPHome should look like this:
-
-
-| esphome
-| ├── libraries
-| │   └── MAX17048.h
-| │   └── VEML7700.h
-| └── smart-plant.yaml
-| 
-
-And you can find these two files from here: 
-
-- :download:`VEML7700<files/VEML7700.h>`
-- :download:`MAX17048<files/MAX17048.h>`
-
-With these to files, you can proceed with the setting up:
 
 1. Make sure your ESPHome Add-on for HA is up to date and working. 
 2. Add a new device, enter the name you want (like *Smart-Plant*), and skip the next step.
@@ -63,7 +47,7 @@ With these to files, you can proceed with the setting up:
 
 
 .. Important:: 
-    Note that with this example code, the Smart Plant enters into deep-sleep mode if the battery level is under a 95% (lines 363-383), so be aware that if you want to flash it :term:`OTA`, make sure the battery is fully charged or the Smart Plant powered via USB-C.
+    Note that with this example code, the Smart Plant enters into deep-sleep mode if the battery level is under a 95% (lines 393-401), so be aware that if you want to flash it :term:`OTA`, make sure the battery is fully charged or the Smart Plant powered via USB-C.
 
     
 .. Note::
