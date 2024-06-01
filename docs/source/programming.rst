@@ -51,6 +51,22 @@ the one I strongly recommend is the one through the `ESPHome Add-on for Home Ass
 
     
 .. Note::
+    The Smart Plant integrates a *battery gauge* sensor (MAX17048), not natively supported by ESPHome at the moment. However by adding the following code, it would work::
+        
+        external_components:
+            - source: github://Option-Zero/esphome-components@max17048
+                components: [max17048]
+        sensor:
+            - platform: max17048
+                battery_voltage:
+                name: Battery voltage
+                battery_level:
+                name: Battery level
+                rate:
+                name: Battery discharge rate
+
+
+.. Note::
     ``Lemon_tree_label_page_1.png`` is the background image that will be displayed on the e-paper. For having always a styled background image, I made a `python script <https://github.com/JGAguado/Label-maker>`_ that generates the image of the plant, the title and the parameter 
     gauges out of a JSON config file. Alternativelly, you can use any photo editor of your choice, but keep in mind the display size 
     (296x128 pixel) and the center of each gauges (indicated in the YAML code). In this example, it is obtained from an URL, but you can upload yours locally following the `ESPHome guide <https://esphome.io/components/display/index.html#images>`_
