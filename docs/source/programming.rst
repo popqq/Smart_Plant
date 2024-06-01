@@ -52,17 +52,17 @@ the one I strongly recommend is the one through the `ESPHome Add-on for Home Ass
     
 .. Note::
     The Smart Plant integrates a *battery gauge* sensor (MAX17048), not natively supported by ESPHome at the moment. However by adding the following code, it would work::
-        
+
         external_components:
             - source: github://Option-Zero/esphome-components@max17048
                 components: [max17048]
         sensor:
             - platform: max17048
-                battery_voltage:
+              battery_voltage:
                 name: Battery voltage
-                battery_level:
+              battery_level:
                 name: Battery level
-                rate:
+              rate:
                 name: Battery discharge rate
 
 
