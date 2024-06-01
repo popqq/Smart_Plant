@@ -55,6 +55,7 @@ please contact me directly:
    :hidden:
 
    safety   
+   🛒 Buy <https://www.elecrow.com/smart-plant.html>   
    details
    getting_started
    design   
