@@ -25,6 +25,9 @@ Contents
 :doc:`safety`
     How to operate and manipulate the |Product|.
 
+Buy <https://www.elecrow.com/smart-plant.html>
+    Get your own |Product| kit today.
+
 :doc:`details`
     A deeper explanation on the systems of the |Product|.
 
