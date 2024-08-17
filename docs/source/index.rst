@@ -45,7 +45,7 @@ If you like this project and you would be interested on the future Smart Plant d
 
 .. raw:: html
         
-    <iframe src="_static/newsletter.html" style="width: 100%; height: 300px; border: none;"></iframe>
+    <iframe src="_static/newsletter.html" style="width: 100%; height: 400px; border: none;"></iframe>
 
 
 .. Important::
