@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Form</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Bootstrap Select CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/css/bootstrap-select.min.css">
+    <!-- Flag Icon CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+    <style>
+        body {
+            padding: 20px;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <form id="subscriptionForm">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="country">Country</label>
+            <select id="country" class="selectpicker form-control" data-live-search="true" required>
+                <option value="">Select your country</option> <!-- Default option -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+    </form>
+</div>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap Select JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"></script>
+<!-- Flag Icon JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/js/flag-icon.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        // Fetch countries from the REST API
+        $.getJSON('https://restcountries.com/v3.1/all', function (data) {
+            if (Array.isArray(data)) {
+                let options = '';
+                data.forEach(country => {
+                    if (country.cca2) {
+                        const code = country.cca2.toLowerCase();
+                        const name = country.name.common;
+                        options += `<option data-content='<span class="flag-icon flag-icon-${code}"></span> ${name}' value='${name}'>${name}</option>`;
+                    }
+                });
+                $('#country').html(options);
+                $('#country').selectpicker('refresh'); // Refresh Bootstrap Select
+            } else {
+                console.error('Unexpected data format:', data);
+                alert('Failed to load country data. Please try again later.');
+            }
+        }).fail(function () {
+            console.error('Failed to fetch country data.');
+            alert('Failed to load country data. Please try again later.');
+        });
+    });
+
+    // Handle form submission
+    $('#subscriptionForm').on('submit', function (event) {
+        event.preventDefault();
+
+        // Collect form data
+        const formData = {
+            name: $('#name').val(),
+            country: $('#country').val(),
+            email: $('#email').val()
+        };
+
+        // Send form data to Google Apps Script
+        $.ajax({
+            url: 'https://script.google.com/macros/s/AKfycbyMJAL1sm2ANbW_8GHt8MrYewIxTmOxqShtwtpxvCrzwG7Xx8qUa6hNRyKYJYvFRjrSvw/exec', // Replace with your Google Apps Script URL
+            type: 'POST',
+            data: formData,
+            success: function (response) {
+                alert('Thank you for subscribing!');
+                $('#subscriptionForm')[0].reset(); // Reset the form fields
+            },
+            error: function () {
+                alert('There was an error submitting the form. Please try again.');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
