@@ -23,6 +23,7 @@
 <body>
 
 <div class="form-container">
+    <h1>Subscribe to Our Newsletter</h1>
     <form id="subscriptionForm">
         <div class="form-group">
             <label for="name">Name</label>
@@ -56,6 +57,14 @@
         // Fetch countries from the REST API
         $.getJSON('https://restcountries.com/v3.1/all', function (data) {
             if (Array.isArray(data)) {
+                // Sort countries alphabetically by name
+                data.sort((a, b) => {
+                    const nameA = a.name.common.toUpperCase();
+                    const nameB = b.name.common.toUpperCase();
+                    return nameA.localeCompare(nameB);
+                });
+
+                // Generate options with flags and names
                 let options = '';
                 data.forEach(country => {
                     if (country.cca2) {
@@ -64,6 +73,8 @@
                         options += `<option data-content='<span class="flag-icon flag-icon-${code}"></span> ${name}' value='${name}'>${name}</option>`;
                     }
                 });
+
+                // Populate the select element
                 $('#country').html(options);
                 $('#country').selectpicker('refresh'); // Refresh Bootstrap Select
             } else {
@@ -89,7 +100,7 @@
 
         // Send form data to Google Apps Script
         $.ajax({
-            url: 'https://script.google.com/macros/s/AKfycbyMJAL1sm2ANbW_8GHt8MrYewIxTmOxqShtwtpxvCrzwG7Xx8qUa6hNRyKYJYvFRjrSvw/exec', // Replace with your Google Apps Script URL
+            url: 'https://script.google.com/macros/s/AKfycbyMJAL1sm2ANbW_8GHt8MrYewIxTmOxqShtwtpxvCrzwG7Xx8qUa6hNRyKYJYvFRjrSvw/exec', 
             type: 'POST',
             data: formData,
             success: function (response) {
