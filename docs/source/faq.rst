@@ -1,6 +1,9 @@
 💬 :term:`FAQ`
 =============================
 
+When trying to flash the |Product| with `ESPHome Web <https://web.esphome.io>`_ , I get a spinning ring with "connecting" for a few seconds and then it errors out with "Failed to initialize".
+    This is an issue related to `ESPHome Web <https://web.esphome.io>`_ when trying to flash ESP32-S2 modules and (at the moment of writing this guide) is still unsolved. Please check alternative ways (on the :ref:`esphome` programming section) of flashing the |Product|. 
+
 After connecting the battery, I don't see the e-paper refresh or any LED on.
     The two LEDs that are on the board (STDBY & CHRG) only indicate the state of the battery while charging (USB-C or solar panel). The way to 
     check if the SmartPlant is alive is pressing the Reset pushbutton and see that the e-paper refreshes correctly. If not, you will need to 

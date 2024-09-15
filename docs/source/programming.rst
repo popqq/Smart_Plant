@@ -19,7 +19,7 @@ ESPHome
 with a very little effort. It is configured via YAML files and supports a wide range of functionalities
 and sensors.
 
-.. Important::
+.. Hint::
     For using ESPHome, and all its funcionalities, you need to have a `Home Assistant <https://www.home-assistant.io>`_ instance running
     in the same network as your |Product|.
 
@@ -27,6 +27,9 @@ and sensors.
 The |Product| comes raw, without any firmware by default, therefore, you will need to flash it for first time. There are many ways to flash 
 your ESPHome device (`locally <https://esphome.io/guides/getting_started_command_line.html>`_, `ESPHome Web <https://web.esphome.io>`_), but 
 the one I strongly recommend is the one through the `ESPHome Add-on for Home Assistant <https://esphome.io/guides/getting_started_hassio.html>`_:
+
+.. Error::
+    For the last months, the `ESPHome Web <https://web.esphome.io>`_ web has been having some issues when trying to flash ESP32-S2 modules. Therefore the best way to flash it for first time is with the ESPHome HA (Home Assistant) add-on running on a Raspberry Pi and the Smart Powermeter connected to the RPi.
 
 
 1. Make sure your ESPHome Add-on for HA is up to date and working. 
