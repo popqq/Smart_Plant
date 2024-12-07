@@ -124,3 +124,5 @@ different than with any other ESP32 devices:
    by default.
 6. Select the correct port and remember to enter the board into flashing mode before uploading the sketch.
 
+.. Tip::
+    Remember to check out the full :ref:`pinout`

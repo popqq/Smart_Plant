@@ -1,6 +1,34 @@
 💡 Details
 ===============
 
+.. _pinout:
+
+Pinout
+---------
+The |Product| embeds an ESP32-S2 microcontroller with following Pinout:
+
+| **Component**                | **Pin**       | **Description**                                         |
+|-------------------------------|---------------|---------------------------------------------------------|
+| **I²C**                      |               |                                                         |
+| - Serial Clock Line (SCL)     | GPIO34        | Used for I²C communication clock signal.               |
+| - Serial Data Line (SDA)      | GPIO33        | Used for I²C communication data signal.                |
+| **SPI**                      |               |                                                         |
+| - Clock (CLK)                 | GPIO12        | SPI clock signal.                                       |
+| - Master Out Slave In (MOSI)  | GPIO11        | SPI data from master to slave.                         |
+| **Analog/Digital Sensors**   |               |                                                         |
+| - Battery Voltage (ADC)       | GPIO2         | Reads battery voltage level.                           |
+| - Solar input (ADC)       | GPIO3         | Reads the voltage level from the solar input pad.                           |
+| - Soil Moisture (ADC)         | GPIO1         | Measures soil moisture.                                 |
+| **Digital Outputs**          |               |                                                         |
+| - Excitation Switch           | GPIO4         | Controls excitation signal for powering the sensors.                |
+| **Display (WaveShare E-Paper)** |               |                                                         |
+| - Chip Select (CS)            | GPIO10        | Selects the e-paper display module.                    |
+| - Data/Command (DC)           | GPIO13        | Differentiates between data and commands.              |
+| - Busy Indicator (BUSY)       | GPIO14        | Signals when the display is busy.                      |
+| - Reset (RST)                 | GPIO15        | Resets the display module.                             |
+
+
+
 Power
 --------
 The |Product| is be powered through a :term:`LiPo` battery plugged into the white JST connector. The voltage of the battery is regulated to the working 3.3V through a low-consumption :term:`LDO`.
