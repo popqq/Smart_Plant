@@ -98,11 +98,7 @@ The USB Type-C is a very extended port for portable electronics, and because of 
 
 
 Sensors
---------
-.. figure:: ../../Documentation/Images/SP_Top.png
-    :align: right
-    :figwidth: 200px
-    
+--------   
 As the |Product| is intended to work during long periods of time without having to be recharged, it is important to avoid undesired consumptions 
 durint the deep-sleep periods. This implies that the sensors have to be powered **only** when they are needed. 
 
