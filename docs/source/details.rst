@@ -5,7 +5,7 @@
 
 Pinout
 ---------
-The |Product| embeds an ESP32-S2 microcontroller with following Pinout:
+The |Product| integrates an ESP32-S2 microcontroller with the following pinout:
 
 .. list-table:: Pinout table
     :widths: 10 10 40
